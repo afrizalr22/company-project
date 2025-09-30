@@ -1,24 +1,18 @@
   @extends('front.layouts.app')
   @section('content')
       <div id="header" class="bg-[#F6F7FA] relative overflow-hidden">
-          <div class="container max-w-[1130px] mx-auto relative pt-10 z-10">
+          <div class="container max-w-[1130px] mx-auto relative pt-10 pb-20">
               <x-navbar />
               @forelse ($hero_sections as $hero_section)
                   <input type="hidden" name="path_video" id="path_video" value="{{ $hero_section->path_video }}">
-                  <div id="Hero" class="flex flex-col gap-[30px] mt-20 pb-20">
-                      <div class="flex items-center bg-white p-[8px_16px] gap-[10px] rounded-full w-fit">
-                          <div class="w-5 h-5 flex shrink-0 overflow-hidden">
-                              <img src="{{ asset('assets/icons/crown.svg') }}" class="object-contain" alt="icon">
-                          </div>
-                          <p class="font-semibold text-sm">{{ $hero_section->achievement }}</p>
-                      </div>
-                      <div class="flex flex-col gap-[10px]">
-                          <h1 class="font-extrabold text-[50px] leading-[65px] max-w-[536px]">
+                  <div id="Hero" class="flex flex-col gap-[30px] mt-20 pb-20 pt-10 items-center text-center">
+                      <div class="flex flex-col gap-[10px] max-w-[650px]">
+                          <h1 class="font-extrabold text-[50px] leading-[65px]">
                               {{ $hero_section->heading }}
                           </h1>
                           <p class="text-cp-light-grey leading-[30px] max-w-[437px]">{{ $hero_section->subheading }}</p>
                       </div>
-                      <div class="flex items-center gap-4">
+                      <div class="flex flex-wrap justify-center gap-4">
                           <a href=""
                               class="bg-cp-dark-blue p-5 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Start
                               Now</a>
@@ -33,43 +27,57 @@
                       </div>
                   </div>
           </div>
-          <div class="absolute w-[43%] h-full top-0 right-0 overflow-hidden z-0">
-              <img src="{{ Storage::url($hero_section->banner) }}" class="object-cover w-full h-full" alt="banner">
-          </div>
       @empty
           <p>Data tidak tersedia!</p>
           @endforelse
       </div>
-      <div class="bg-[#f1f2f5] relative overflow-hidden">
+      <div id="header" class="relative overflow-hidden">
           <div class="container max-w-[1130px] mx-auto relative pt-10 z-10">
               @forelse ($about_tims as $about_tim)
-                  <div id="Hero" class="flex flex-row gap-20 mt-20 pb-20 items-center w-full">
-                      <div class="basis-[43%] h-full top-0 right-0 overflow-hidden z- flex-shrink-0">
-                          <img src="{{ Storage::url($about_tim->poster) }}" class="object-cover w-full h-full"
+                  <div id="Hero"
+                      class="flex flex-col md:flex-row gap-10 md:gap-20 mt-10 md:mt-20 pb-10 md:pb-20 items-center w-full">
+
+                      <!-- Image -->
+                      <div class="w-full md:basis-[43%] h-auto md:h-full flex-shrink-0">
+                          <img src="{{ Storage::url($about_tim->poster) }}" class="object-cover w-full h-full rounded-xl"
                               alt="poster">
                       </div>
-                      <div class="flex flex-col gap-5 flex-1 w-[50%]">
+
+                      <!-- Content -->
+                      <div class="flex flex-col gap-5 w-full md:flex-1 md:w-[50%] text-left px-4 md:px-0 mt-5 md:mt-0">
                           <p class="font-semibold text-sm">{{ $about_tim->subheading }}</p>
-                          <h1 class="font-extrabold text-[50px] leading-[65px] max-w-[536px]">
+
+                          <h1
+                              class="font-extrabold text-2xl md:text-[50px] leading-snug md:leading-[65px] md:max-w-[536px]">
                               {{ $about_tim->heading }}
                           </h1>
-                          <p class="text-cp-light-grey leading-[30px] max-w-[449px] text-justify">Tim kami terdiri dari
-                              profesional yang
-                              berpengalaman dalam berbagai aspek, menggabungkan keahlian teknologi, kreativitas, dan wawasan
-                              untuk memberikan solusi yang intuitif, efisien, dan dirancang untuk memaksimalkan potensi
-                              bisnis anda.</p>
-                          <div class="w-30 h-10 flex flex-row gap-5">
-                              <img src="{{ asset('assets/icons/crown.svg') }}" class="object-contain" alt="icon">
-                              {{-- menambahkan form service pada about tim --}}
-                              <p class="font-semibold text-sm pl-5">{{ $hero_section->achievement }}</p>
+
+                          <p
+                              class="text-cp-light-grey text-sm md:text-base leading-relaxed md:leading-[30px] 
+                              md:max-w-[449px] text-justify">
+                              Tim kami terdiri dari profesional yang berpengalaman dalam berbagai aspek,
+                              menggabungkan keahlian teknologi, kreativitas, dan wawasan untuk memberikan
+                              solusi yang intuitif, efisien, dan dirancang untuk memaksimalkan potensi bisnis anda.
+                          </p>
+
+                          <!-- Achievement -->
+                          <div class="flex items-center gap-3">
+                              <img src="{{ asset('assets/icons/crown.svg') }}" class="object-contain w-5 h-5"
+                                  alt="icon">
+                              <p class="font-semibold text-sm">{{ $hero_section->achievement }}</p>
                           </div>
+
+                          <!-- Button -->
                           <a href=""
-                              class="bg-cp-light-blue p-4 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Hubungi
-                              Kami</a>
+                              class="bg-cp-light-blue px-6 py-3 w-fit rounded-xl
+                               hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 
+                               font-bold text-white text-sm md:text-base">
+                              Hubungi Kami
+                          </a>
                       </div>
                   </div>
               @empty
-                  <p>Data tidak tersedia!</p>
+                  <p class="text-center">Data tidak tersedia!</p>
               @endforelse
           </div>
       </div>
@@ -141,36 +149,39 @@
               </div>
           </div>
       </div> --}}
-      <div id="OurPrinciples" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
-          <div class="flex items-center justify-between">
-              <div class="flex flex-col gap-[14px]">
-                  <h2 class="font-bold text-4xl leading-[45px]">Kenapa Memilih Jasa Kami?</h2>
-                  <p class="font-semibold text-sm">Alasan kenapa Anda harus memilih kami sebagai partner.</p>
-              </div>
-          </div>
-          <div class="flex flex-wrap items-center gap-[30px] justify-center">
-              @forelse ($principles as $principle)
-                  <div
-                      class="card w-[356.67px] flex flex-col bg-white border border-[#E8EAF2] rounded-[20px] gap-[30px] overflow-hidden hover:border-cp-dark-blue transition-all duration-300">
-                      <div class="thumbnail h-[200px] flex shrink-0 overflow-hidden">
-                          <img src="{{ Storage::url($principle->thumbnail) }}"
-                              class="object-cover object-center w-full h-full" alt="thumbnails">
-                      </div>
-                      <div class="flex flex-col p-[0_30px_30px_30px] gap-5">
-                          <div class="w-[55px] h-[55px] flex shrink-0 overflow-hidden">
-                              <img src="{{ Storage::url($principle->icon) }}" class="w-full h-full object-contain"
-                                  alt="icon">
-                          </div>
-                          <div class="flex flex-col gap-1">
-                              <p class="title font-bold text-xl leading-[30px]">{{ $principle->name }}</p>
-                              <p class="leading-[30px] text-cp-light-grey">{{ $principle->subtitle }}</p>
-                          </div>
-                          <a href="" class="font-semibold text-cp-dark-blue">Learn More</a>
-                      </div>
+      <div id="header" class="bg-[#F6F7FA] relative overflow-hidden">
+          <div id="OurPrinciples"
+              class="container bg-[#F6F7FA] max-w-[1130px] pb-20 mx-auto flex flex-col gap-[30px] mt-20">
+              <div class="flex items-center justify-between">
+                  <div class="flex flex-col gap-[14px]">
+                      <h2 class="font-bold text-4xl leading-[45px]">Kenapa Memilih Jasa Kami?</h2>
+                      <p class="font-semibold text-sm">Alasan kenapa Anda harus memilih kami sebagai partner.</p>
                   </div>
-              @empty
-                  <p>Data tidak tersedia!</p>
-              @endforelse
+              </div>
+              <div class="flex flex-wrap items-center gap-[30px] justify-center">
+                  @forelse ($principles as $principle)
+                      <div
+                          class="card w-[356.67px] flex flex-col bg-white border border-[#E8EAF2] rounded-[20px] gap-[30px] overflow-hidden hover:border-cp-dark-blue transition-all duration-300">
+                          <div class="thumbnail h-[200px] flex shrink-0 overflow-hidden">
+                              <img src="{{ Storage::url($principle->thumbnail) }}"
+                                  class="object-cover object-center w-full h-full" alt="thumbnails">
+                          </div>
+                          <div class="flex flex-col p-[0_30px_30px_30px] gap-5">
+                              <div class="w-[55px] h-[55px] flex shrink-0 overflow-hidden">
+                                  <img src="{{ Storage::url($principle->icon) }}" class="w-full h-full object-contain"
+                                      alt="icon">
+                              </div>
+                              <div class="flex flex-col gap-1">
+                                  <p class="title font-bold text-xl leading-[30px]">{{ $principle->name }}</p>
+                                  <p class="leading-[30px] text-cp-light-grey">{{ $principle->subtitle }}</p>
+                              </div>
+                              <a href="" class="font-semibold text-cp-dark-blue">Learn More</a>
+                          </div>
+                      </div>
+                  @empty
+                      <p>Data tidak tersedia!</p>
+                  @endforelse
+              </div>
           </div>
       </div>
       {{-- <div id="Stats" class="bg-cp-black w-full mt-20">
@@ -191,29 +202,39 @@
               </div>
           </div>
       </div> --}}
-      <div class="bg-[#f1f2f5] relative overflow-hidden">
-          <div class="container max-w-[1130px] mx-auto relative pt-10 z-10">
+      <div class="relative overflow-hidden">
+          <div class="container max-w-[1130px] mx-auto relative pt-10 z-10 px-5">
               @forelse ($about_tims as $about_tim)
-                  <div id="Hero" class="flex flex-row gap-20 mt-20 pb-20 items-center overflow-hidden">
-                      <div class="w-1/2 flex-shrink-0 top-0 right-0 overflow-hidden z-0">
-                          <img src="{{ Storage::url($about_tim->poster) }}" class="object-cover w-full h-full"
+                  <div id="Hero"
+                      class="flex flex-col md:flex-row gap-10 md:gap-20 mt-10 md:mt-20 pb-10 md:pb-20 items-center overflow-hidden">
+
+                      <!-- Gambar -->
+                      <div class="w-full md:w-1/2 flex-shrink-0 top-0 right-0 overflow-hidden z-0">
+                          <img src="{{ Storage::url($about_tim->poster) }}" class="object-cover w-full h-auto rounded-lg"
                               alt="poster">
                       </div>
-                      <div class="flex flex-col gap-5 w-1/2 overflow-hidden">
+
+                      <!-- Deskripsi -->
+                      <div class="flex flex-col gap-5 w-full md:w-1/2 text-left">
                           <p class="font-semibold text-sm">{{ $about_tim->subheading }}</p>
-                          <h1 class="font-extrabold text-[50px] leading-[65px] max-w-[536px]">
+                          <h1 class="font-extrabold text-3xl md:text-[50px] leading-snug md:leading-[65px]">
                               {{ $about_tim->heading }}
                           </h1>
-                          <p class="text-cp-light-grey leading-[30px] text-justify max-w-[600px]">Kami menyediakan berbagai
-                              solusi
-                              teknologi digital untuk memenuhi kebutuhan individu, UMKM, perusahaan, hingga instansi.
+                          <p class="text-cp-light-grey leading-relaxed text-justify text-sm md:text-base">
+                              Kami menyediakan berbagai solusi teknologi digital untuk memenuhi kebutuhan individu, UMKM,
+                              perusahaan, hingga instansi.
                               Layanan yang kami tawarkan mencakup berbagai bidang teknologi informasi, seperti instalasi dan
-                              pengelolaan CCTV, Absensi digital, Access Control, hingga pengembangan aplikasi web yang
-                              disesuaikan dengan kebutuhan dan karakter bisnis Anda. Solusi yang kami berikan bertujuan
-                              untuk meningkatkan kinerja dan memberikan kemudahan dalam setiap proses operasional bisnis
-                              Anda.</p>
-                          <a href=""
-                              class="bg-cp-light-blue p-4 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Selengkapnya...</a>
+                              pengelolaan CCTV, Absensi digital,
+                              Access Control, hingga pengembangan aplikasi web yang disesuaikan dengan kebutuhan dan
+                              karakter bisnis Anda.
+                              Solusi yang kami berikan bertujuan untuk meningkatkan kinerja dan memberikan kemudahan dalam
+                              setiap proses operasional bisnis Anda.
+                          </p>
+                          <a href="#"
+                              class="bg-cp-light-blue px-6 py-3 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] 
+            transition-all duration-300 font-bold text-white text-sm md:text-base">
+                              Selengkapnya...
+                          </a>
                       </div>
                   </div>
               @empty
@@ -222,39 +243,43 @@
           </div>
       </div>
       {{-- Hero Inovasi Teknologi --}}
-      <div class="container max-w-[1130px] mx-auto relative pt-10 z-10">
-          <div
-              class="flex flex-row gap-20 mt-20 pb-20 items-center overflow-hidden 
-              max-sm:flex-col max-sm:gap-10 max-sm:mt-10 max-sm:pb-10">
+      <div id="header" class="bg-[#F6F7FA] relative overflow-hidden">
+          <div class="container max-w-[1130px] mx-auto relative pt-10 z-10">
+              <div
+                  class="flex flex-col md:flex-row gap-10 md:gap-20 mt-10 md:mt-20 pb-10 md:pb-20 items-center overflow-hidden">
 
-              <!-- Deskripsi -->
-              <div class="flex flex-col gap-5 w-1/2 overflow-hidden max-sm:w-full">
-                  <h1 class="font-extrabold text-2xl">Inovasi dengan solusi teknologi</h1>
-                  <p class="text-cp-light-grey text-justify">
-                      Kami percaya bahwa teknologi adalah kunci untuk menghadirkan
-                      kemudahan, efisiensi, dan inovasi dalam setiap aspek. Dengan solusi
-                      yang dirancang khusus untuk kebutuhan Anda, kami hadir untuk
-                      membantu mengoptimalkan operasional, meningkatkan produktivitas,
-                      dan membawa bisnis Anda ke level berikutnya. Setiap layanan yang
-                      kami tawarkan berlandaskan pada pengalaman, keahlian, dan komitmen
-                      untuk memberikan hasil terbaik bagi setiap pelanggan. Mari bersama-sama
-                      mewujudkan masa depan yang lebih cerdas melalui teknologi.
-                  </p>
-                  <a href=""
-                      class="bg-cp-light-blue p-4 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] 
-                    transition-all duration-300 font-bold text-white">
-                      SELENGKAPNYA
-                  </a>
-              </div>
+                  <!-- Deskripsi -->
+                  <div class="flex flex-col gap-5 w-full md:w-1/2 overflow-hidden px-4 md:px-0">
+                      <h1 class="font-extrabold text-2xl md:text-[32px] lg:text-[40px] leading-snug md:leading-[50px]">
+                          Inovasi dengan solusi teknologi
+                      </h1>
+                      <p class="text-cp-light-grey leading-relaxed text-justify text-sm md:text-base">
+                          Kami percaya bahwa teknologi adalah kunci untuk menghadirkan kemudahan, efisiensi, dan inovasi
+                          dalam setiap aspek.
+                          Dengan solusi yang dirancang khusus untuk kebutuhan Anda, kami hadir untuk membantu mengoptimalkan
+                          operasional,
+                          meningkatkan produktivitas, dan membawa bisnis Anda ke level berikutnya.
+                          Setiap layanan yang kami tawarkan berlandaskan pada pengalaman, keahlian, dan komitmen untuk
+                          memberikan hasil terbaik
+                          bagi setiap pelanggan. Mari bersama-sama mewujudkan masa depan yang lebih cerdas melalui
+                          teknologi.
+                      </p>
+                      <a href=""
+                          class="bg-cp-light-blue px-6 py-3 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] 
+          transition-all duration-300 font-bold text-white">
+                          SELENGKAPNYA
+                      </a>
+                  </div>
 
-              <!-- Image -->
-              <div class="w-1/2 flex-shrink-0 overflow-hidden z-0 max-sm:w-full">
-                  <img src="assets/thumbnails/cover1.jpg" alt="solusi" class="object-cover w-full h-auto">
+                  <!-- Image -->
+                  <div class="w-full md:w-1/2 flex-shrink-0 overflow-hidden z-0 px-4 md:px-0">
+                      <img src="assets/thumbnails/cover1.jpg" alt="solusi" class="object-cover w-full h-auto">
+                  </div>
+
               </div>
           </div>
       </div>
-      <div>
-          {{-- <div id="Products" class="container max-w-[1130px] mx-auto flex flex-col gap-20 mt-20">
+      {{-- <div id="Products" class="container max-w-[1130px] mx-auto flex flex-col gap-20 mt-20">
           @forelse ($products as $product)
               <div class="product flex flex-wrap justify-center items-center gap-[60px] even:flex-row-reverse">
                   <div class="w-[470px] h-[550px] flex shrink-0 overflow-hidden">
@@ -278,128 +303,128 @@
               <p>Data tidak tersedia!</p>
           @endforelse
       </div> --}}
-          <div id="Teams" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20">
-              <div class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] items-center">
-                  <div class="flex flex-col gap-[14px] items-center">
-                      <p
-                          class="badge w-fit bg-cp-light-blue text-white p-[8px_16px] rounded-full uppercase font-bold text-sm">
-                          OUR POWERFUL TEAM</p>
-                      <h2 class="font-bold text-4xl leading-[45px] text-center">We Share Same Dreams <br> Change The World
-                      </h2>
-                  </div>
-                  <div
-                      class="teams-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] justify-center">
-                      @forelse ($teams as $team)
-                          <div
-                              class="card bg-white flex flex-col h-full justify-center items-center p-[30px] px-[29px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
-                              <div
-                                  class="w-[100px] h-[100px] flex shrink-0 items-center justify-center rounded-full bg-[linear-gradient(150.55deg,_#007AFF_8.72%,_#312ECB_87.11%)]">
-                                  <div class="w-[90px] h-[90px] rounded-full overflow-hidden">
-                                      <img src="{{ Storage::url($team->avatar) }}"
-                                          class="object-cover w-full h-full object-center" alt="photo">
-                                  </div>
-                              </div>
-                              <div class="flex flex-col gap-1 text-center">
-                                  <p class="font-bold text-xl leading-[30px]">{{ $team->name }}</p>
-                                  <p class="text-cp-light-grey">{{ $team->occupation }}</p>
-                              </div>
-                              <div class="flex items-center justify-center gap-[10px]">
-                                  <div class="w-6 h-6 flex shrink-0">
-                                      <img src="{{ asset('assets/icons/global.svg') }}" alt="icon">
-                                  </div>
-                                  <p class="text-cp-dark-blue font-semibold">{{ $team->location }}</p>
-                              </div>
-                          </div>
-                      @empty
-                          <p>Data tidak tersedia!</p>
-                      @endforelse
-                      <a href="{{ route('front.team') }}" class="view-all-card">
-                          <div
-                              class="card bg-white flex flex-col h-full justify-center items-center p-[30px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
-                              <div class="w-[60px] h-[60px] flex shrink-0">
-                                  <img src="{{ asset('assets/icons/profile-2user.svg') }}" alt="icon">
-                              </div>
-                              <div class="flex flex-col gap-1 text-center">
-                                  <p class="font-bold text-xl leading-[30px]">View All</p>
-                                  <p class="text-cp-light-grey">Our Great People</p>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-              </div>
-          </div>
-          <div id="Testimonials" class="w-full flex flex-col gap-[50px] items-center mt-20">
+      <div id="Teams" class="w-full py-20 px-[10px] mt-20">
+          <div class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] items-center">
               <div class="flex flex-col gap-[14px] items-center">
-                  <p
-                      class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">
-                      SUCCESS CLIENTS</p>
-                  <h2 class="font-bold text-4xl leading-[45px] text-center">Our Satisfied Clients<br>From Worldwide Company
+                  <p class="badge w-fit bg-cp-light-blue text-white p-[8px_16px] rounded-full uppercase font-bold text-sm">
+                      OUR POWERFUL TEAM</p>
+                  <h2 class="font-bold text-4xl leading-[45px] text-center">We Share Same Dreams <br> Change The
+                      World
                   </h2>
               </div>
-              <div class="main-carousel w-full">
-                  @forelse ($testimonials as $testimonial)
+              <div
+                  class="teams-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] justify-center">
+                  @forelse ($teams as $team)
                       <div
-                          class="carousel-card container max-w-[1130px] w-full flex flex-wrap justify-between items-center lg:mx-[calc((100vw-1130px)/2)]">
-                          <div class="testimonial-container flex flex-col gap-[112px] w-[565px]">
-                              <div class="flex flex-col gap-[30px]">
-                                  <div class="h-9 overflow-hidden">
-                                      <img src="{{ Storage::url($testimonial->client->logo) }}" class="object-contain"
-                                          alt="icon">
-                                  </div>
-                                  <div class="relative pt-[27px] pl-[30px]">
-                                      <div class="absolute top-0 left-0">
-                                          <img src="{{ asset('assets/icons/quote.svg') }}" alt="icon">
-                                      </div>
-                                      <p class="font-semibold text-2xl leading-[46px] relative z-10">
-                                          {{ $testimonial->message }}</p>
-                                  </div>
-                                  <div class="flex items-center justify-between pl-[30px]">
-                                      <div class="flex items-center gap-6">
-                                          <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-                                              <img src="{{ Storage::url($testimonial->client->avatar) }}"
-                                                  class="w-full h-full object-cover" alt="photo">
-                                          </div>
-                                          <div class="flex flex-col justify-center gap-1">
-                                              <p class="font-bold">{{ $testimonial->client->name }}</p>
-                                              <p class="text-sm text-cp-light-grey">
-                                                  {{ $testimonial->client?->occupation }}
-                                              </p>
-                                          </div>
-                                      </div>
-                                      <div class="flex flex-nowrap">
-                                          <div class="w-6 h-6 flex shrink-0">
-                                              <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
-                                          </div>
-                                          <div class="w-6 h-6 flex shrink-0">
-                                              <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
-                                          </div>
-                                          <div class="w-6 h-6 flex shrink-0">
-                                              <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
-                                          </div>
-                                          <div class="w-6 h-6 flex shrink-0">
-                                              <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
-                                          </div>
-                                          <div class="w-6 h-6 flex shrink-0">
-                                              <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="carousel-indicator flex items-center justify-center gap-2 h-4 shrink-0">
+                          class="card bg-white flex flex-col h-full justify-center items-center p-[30px] px-[29px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
+                          <div
+                              class="w-[100px] h-[100px] flex shrink-0 items-center justify-center rounded-full bg-[linear-gradient(150.55deg,_#007AFF_8.72%,_#312ECB_87.11%)]">
+                              <div class="w-[90px] h-[90px] rounded-full overflow-hidden">
+                                  <img src="{{ Storage::url($team->avatar) }}"
+                                      class="object-cover w-full h-full object-center" alt="photo">
                               </div>
                           </div>
-                          <div
-                              class="testimonial-thumbnail w-[470px] h-[550px] rounded-[20px] overflow-hidden bg-[#D9D9D9]">
-                              <img src="{{ Storage::url($testimonial->thumbnail) }}"
-                                  class="w-full h-full object-cover object-center" alt="thumbnail">
+                          <div class="flex flex-col gap-1 text-center">
+                              <p class="font-bold text-xl leading-[30px]">{{ $team->name }}</p>
+                              <p class="text-cp-light-grey">{{ $team->occupation }}</p>
+                          </div>
+                          <div class="flex items-center justify-center gap-[10px]">
+                              <div class="w-6 h-6 flex shrink-0">
+                                  <img src="{{ asset('assets/icons/global.svg') }}" alt="icon">
+                              </div>
+                              <p class="text-cp-dark-blue font-semibold">{{ $team->location }}</p>
                           </div>
                       </div>
                   @empty
                       <p>Data tidak tersedia!</p>
                   @endforelse
+                  <a href="{{ route('front.team') }}" class="view-all-card">
+                      <div
+                          class="card bg-white flex flex-col h-full justify-center items-center p-[30px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
+                          <div class="w-[60px] h-[60px] flex shrink-0">
+                              <img src="{{ asset('assets/icons/profile-2user.svg') }}" alt="icon">
+                          </div>
+                          <div class="flex flex-col gap-1 text-center">
+                              <p class="font-bold text-xl leading-[30px]">View All</p>
+                              <p class="text-cp-light-grey">Our Great People</p>
+                          </div>
+                      </div>
+                  </a>
               </div>
           </div>
-          {{-- <div id="Awards" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
+      </div>
+      <div id="Testimonials" class="bg-[#F6F7FA] w-full flex flex-col gap-[50px] items-center mt-20">
+          <div class="flex flex-col gap-[14px] items-center">
+              <p
+                  class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">
+                  SUCCESS CLIENTS</p>
+              <h2 class="font-bold text-4xl leading-[45px] text-center">Our Satisfied Clients<br>From Worldwide
+                  Company
+              </h2>
+          </div>
+          <div class="main-carousel w-full">
+              @forelse ($testimonials as $testimonial)
+                  <div
+                      class="carousel-card container max-w-[1130px] w-full flex flex-wrap justify-between items-center lg:mx-[calc((100vw-1130px)/2)]">
+                      <div class="testimonial-container flex flex-col gap-[112px] w-[565px]">
+                          <div class="flex flex-col gap-[30px]">
+                              <div class="h-9 overflow-hidden">
+                                  <img src="{{ Storage::url($testimonial->client->logo) }}" class="object-contain"
+                                      alt="icon">
+                              </div>
+                              <div class="relative pt-[27px] pl-[30px]">
+                                  <div class="absolute top-0 left-0">
+                                      <img src="{{ asset('assets/icons/quote.svg') }}" alt="icon">
+                                  </div>
+                                  <p class="font-semibold text-2xl leading-[46px] relative z-10">
+                                      {{ $testimonial->message }}</p>
+                              </div>
+                              <div class="flex items-center justify-between pl-[30px]">
+                                  <div class="flex items-center gap-6">
+                                      <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
+                                          <img src="{{ Storage::url($testimonial->client->avatar) }}"
+                                              class="w-full h-full object-cover" alt="photo">
+                                      </div>
+                                      <div class="flex flex-col justify-center gap-1">
+                                          <p class="font-bold">{{ $testimonial->client->name }}</p>
+                                          <p class="text-sm text-cp-light-grey">
+                                              {{ $testimonial->client?->occupation }}
+                                          </p>
+                                      </div>
+                                  </div>
+                                  <div class="flex flex-nowrap">
+                                      <div class="w-6 h-6 flex shrink-0">
+                                          <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
+                                      </div>
+                                      <div class="w-6 h-6 flex shrink-0">
+                                          <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
+                                      </div>
+                                      <div class="w-6 h-6 flex shrink-0">
+                                          <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
+                                      </div>
+                                      <div class="w-6 h-6 flex shrink-0">
+                                          <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
+                                      </div>
+                                      <div class="w-6 h-6 flex shrink-0">
+                                          <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="carousel-indicator flex items-center justify-center gap-2 h-4 shrink-0">
+                          </div>
+                      </div>
+                      <div class="testimonial-thumbnail w-[470px] h-[550px] rounded-[20px] overflow-hidden bg-[#D9D9D9]">
+                          <img src="{{ Storage::url($testimonial->thumbnail) }}"
+                              class="w-full h-full object-cover object-center" alt="thumbnail">
+                      </div>
+                  </div>
+              @empty
+                  <p>Data tidak tersedia!</p>
+              @endforelse
+          </div>
+      </div>
+      {{-- <div id="Awards" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
           <div class="flex items-center justify-between">
               <div class="flex flex-col gap-[14px]">
                   <p
@@ -453,233 +478,248 @@
               </div>
           </div>
       </div> --}}
-          <div id="FAQ" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20 -mb-20">
-              <div class="container max-w-[1000px] mx-auto">
-                  <div class="flex flex-col lg:flex-row gap-[50px] sm:gap-[70px] items-center">
-                      <div class="flex flex-col gap-[30px]">
-                          <div class="flex flex-col gap-[10px]">
-                              <h2 class="font-bold text-4xl leading-[45px]">Frequently Asked Questions</h2>
-                          </div>
-                          <a href="{{ route('front.appointment') }}"
-                              class="p-5 bg-cp-black rounded-xl text-white w-fit font-bold">Contact Us</a>
+      <div id="FAQ" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20 -mb-20">
+          <div class="container max-w-[1000px] mx-auto">
+              <div class="flex flex-col lg:flex-row gap-[50px] sm:gap-[70px] items-center">
+                  <div class="flex flex-col gap-[30px]">
+                      <div class="flex flex-col gap-[10px]">
+                          <h2 class="font-bold text-4xl leading-[45px]">Frequently Asked Questions</h2>
                       </div>
-                      <div class="flex flex-col gap-[30px] sm:w-[603px] shrink-0">
-                          <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
-                              <button class="accordion-button flex justify-between gap-1 items-center"
-                                  data-accordion="accordion-faq-1">
-                                  <span class="font-bold text-lg leading-[27px] text-left">Can installments be beneficial
-                                      for
-                                      both?</span>
-                                  <div class="arrow w-9 h-9 flex shrink-0">
-                                      <img src="{{ asset('assets/icons/arrow-circle-down.svg') }}"
-                                          class="transition-all duration-300" alt="icon">
-                                  </div>
-                              </button>
-                              <div id="accordion-faq-1" class="accordion-content hide">
-                                  <p class="leading-[30px] text-cp-light-grey pt-[14px]">We want to protect our and clients
-                                      assets to the max level so that we chose the best one from Jakarta, Indonesia will
-                                      also
-                                      protect post building finished completed ahead one.</p>
-                              </div>
-                          </div>
-                          <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
-                              <button class="accordion-button flex justify-between gap-1 items-center"
-                                  data-accordion="accordion-faq-2">
-                                  <span class="font-bold text-lg leading-[27px] text-left">What kind of framework you
-                                      popular
-                                      with?</span>
-                                  <div class="arrow w-9 h-9 flex shrink-0">
-                                      <img src="{{ asset('assets/icons/arrow-circle-down.svg') }}"
-                                          class="transition-all duration-300" alt="icon">
-                                  </div>
-                              </button>
-                              <div id="accordion-faq-2" class="accordion-content hide">
-                                  <p class="leading-[30px] text-cp-light-grey pt-[14px]">We want to protect our and clients
-                                      assets to the max level so that we chose the best one from Jakarta, Indonesia will
-                                      also
-                                      protect post building finished completed ahead one.</p>
-                              </div>
-                          </div>
-                          <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
-                              <button class="accordion-button flex justify-between gap-1 items-center"
-                                  data-accordion="accordion-faq-3">
-                                  <span class="font-bold text-lg leading-[27px] text-left">What insurance provider do you
-                                      use?</span>
-                                  <div class="arrow w-9 h-9 flex shrink-0">
-                                      <img src="{{ asset('assets/icons/arrow-circle-down.svg') }}"
-                                          class="transition-all duration-300" alt="icon">
-                                  </div>
-                              </button>
-                              <div id="accordion-faq-3" class="accordion-content hide">
-                                  <p class="leading-[30px] text-cp-light-grey pt-[14px]">We want to protect our and clients
-                                      assets to the max level so that we chose the best one from Jakarta, Indonesia will
-                                      also
-                                      protect post building finished completed ahead one.</p>
-                              </div>
-                          </div>
-                          <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
-                              <button class="accordion-button flex justify-between gap-1 items-center"
-                                  data-accordion="accordion-faq-4">
-                                  <span class="font-bold text-lg leading-[27px] text-left">What if we have other
-                                      questions?</span>
-                                  <div class="arrow w-9 h-9 flex shrink-0">
-                                      <img src="{{ asset('assets/icons/arrow-circle-down.svg') }}"
-                                          class="transition-all duration-300" alt="icon">
-                                  </div>
-                              </button>
-                              <div id="accordion-faq-4" class="accordion-content hide">
-                                  <p class="leading-[30px] text-cp-light-grey pt-[14px]">We want to protect our and clients
-                                      assets to the max level so that we chose the best one from Jakarta, Indonesia will
-                                      also
-                                      protect post building finished completed ahead one.</p>
-                              </div>
-                          </div>
-                      </div>
+                      <a href="{{ route('front.appointment') }}"
+                          class="p-5 bg-cp-black rounded-xl text-white w-fit font-bold">Contact Us</a>
                   </div>
-              </div>
-          </div>
-          <footer class="bg-cp-dark-blue w-full relative overflow-hidden mt-20">
-              <div
-                  class="container max-w-[1130px] mx-auto flex flex-wrap gap-y-4 items-center justify-between pt-[100px] pb-[220px] relative z-10">
-                  <div class="flex flex-col gap-10">
-                      <div class="flex items-center gap-3">
-                          <div class="flex shrink-0 h-[43px] overflow-hidden">
-                              <img src="{{ asset('assets/logo/logo-navbar.png') }}" class="object-contain w-full h-full"
-                                  alt="logo">
-                          </div>
-                      </div>
-                      <div class="flex items-center gap-4">
-                          <a href="">
-                              <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-                                  <img src="{{ asset('assets/icons/youtube.svg') }}" class="w-full h-full object-contain"
-                                      alt="youtube">
+                  <div class="flex flex-col gap-[30px] sm:w-[603px] shrink-0">
+                      <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
+                          <button class="accordion-button flex justify-between gap-1 items-center"
+                              data-accordion="accordion-faq-1">
+                              <span class="font-bold text-lg leading-[27px] text-left">Can installments be
+                                  beneficial
+                                  for
+                                  both?</span>
+                              <div class="arrow w-9 h-9 flex shrink-0">
+                                  <img src="{{ asset('assets/icons/arrow-circle-down.svg') }}"
+                                      class="transition-all duration-300" alt="icon">
                               </div>
-                          </a>
-                          <a href="">
-                              <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-                                  <img src="{{ asset('assets/icons/whatsapp.svg') }}"
-                                      class="w-full h-full object-contain" alt="whatsapp">
-                              </div>
-                          </a>
-                          <a href="">
-                              <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-                                  <img src="{{ asset('assets/icons/facebook.svg') }}"
-                                      class="w-full h-full object-contain" alt="facebook">
-                              </div>
-                          </a>
-                          <a href="">
-                              <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-                                  <img src="{{ asset('assets/icons/instagram.svg') }}"
-                                      class="w-full h-full object-contain" alt="instagram">
-                              </div>
-                          </a>
-                      </div>
-                  </div>
-                  <div class="flex flex-wrap gap-[50px]">
-                      <div class="flex flex-col w-[200px] gap-3">
-                          <p class="font-bold text-lg text-white">Useful Links</p>
-                          <a href=""
-                              class="text-cp-light-grey hover:text-white transition-all duration-300">Policies &
-                              Terms</a>
-                          <a href=""
-                              class="text-cp-light-grey hover:text-white transition-all duration-300">Coverage
-                              Area</a>
-                      </div>
-                      <div class="flex flex-col w-[200px] gap-3">
-                          <p class="font-bold text-lg text-white">Company</p>
-                          <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">About
-                              Us</a>
-                          <a href=""
-                              class="text-cp-light-grey hover:text-white transition-all duration-300">Contact
-                              Us</a>
-                          <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Our
-                              Services</a>
-                          <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Team
-                              Us</a>
-                          <a href=""
-                              class="text-cp-light-grey hover:text-white transition-all duration-300">Blog</a>
-                      </div>
-                      <div class="flex flex-col w-[320px] p-6 bg-gray-800 rounded-2xl shadow-lg">
-                          <p class="font-bold text-2xl text-white mb-4">Formulir Kontak</p>
-
-                          <form action="" method="POST" class="flex flex-col gap-4">
-                              <!-- Nama -->
-                              <div class="flex flex-col">
-                                  <label for="nama" class="text-sm font-medium text-white mb-1">Nama</label>
-                                  <input id="nama" name="nama" type="text"
-                                      class="px-3 py-2 rounded-lg border border-gray-600 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                              </div>
-
-                              <!-- Email -->
-                              <div class="flex flex-col">
-                                  <label for="email" class="text-sm font-medium text-white mb-1">Email</label>
-                                  <input id="email" name="email" type="email"
-                                      class="px-3 py-2 rounded-lg border border-gray-600 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                              </div>
-
-                              <!-- Pesan -->
-                              <div class="flex flex-col">
-                                  <label for="pesan" class="text-sm font-medium text-white mb-1">Pesan</label>
-                                  <textarea id="pesan" name="pesan" rows="4"
-                                      class="px-3 py-2 rounded-lg border border-gray-600 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
-                              </div>
-
-                              <!-- Tombol Submit -->
-                              <button type="submit" id="submit"
-                                  class="w-full py-2 mt-2 bg-white hover:bg-blue-700 text-blue font-semibold rounded-lg shadow-md transition duration-200 ease-in-out">
-                                  Kirim
-                              </button>
-                          </form>
-                      </div>
-                  </div>
-              </div>
-              <div class="absolute -bottom-[135px] w-full">
-                  <p class="font-extrabold text-[250px] leading-[375px] text-center text-white opacity-5">NEXICON</p>
-              </div>
-          </footer>
-          <div id="video-modal" tabindex="-1" aria-hidden="true"
-              class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-              <div class="relative p-4 w-full lg:w-1/2 max-h-full">
-                  <!-- Modal content -->
-                  <div class="relative bg-white rounded-[20px] overflow-hidden shadow">
-                      <!-- Modal header -->
-                      <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
-                          <h3 class="text-xl font-semibold text-cp-black">
-                              Company Profile Video
-                          </h3>
-                          <button type="button"
-                              class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
-                              onclick="{modal.hide()}">
-                              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                  viewBox="0 0 14 14">
-                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                      stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                              </svg>
-                              <span class="sr-only">Close modal</span>
                           </button>
+                          <div id="accordion-faq-1" class="accordion-content hide">
+                              <p class="leading-[30px] text-cp-light-grey pt-[14px]">We want to protect our and
+                                  clients
+                                  assets to the max level so that we chose the best one from Jakarta, Indonesia will
+                                  also
+                                  protect post building finished completed ahead one.</p>
+                          </div>
                       </div>
-                      <!-- Modal body -->
-                      <div class="">
-                          <!-- video src added from the js script (modal-video.js) to prevent video running in the backgroud -->
-                          <iframe id="videoFrame" class="aspect-[16/9]" width="100%" src=""
-                              title="Demo Project Laravel Portfolio" frameborder="0"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
+                          <button class="accordion-button flex justify-between gap-1 items-center"
+                              data-accordion="accordion-faq-2">
+                              <span class="font-bold text-lg leading-[27px] text-left">What kind of framework you
+                                  popular
+                                  with?</span>
+                              <div class="arrow w-9 h-9 flex shrink-0">
+                                  <img src="{{ asset('assets/icons/arrow-circle-down.svg') }}"
+                                      class="transition-all duration-300" alt="icon">
+                              </div>
+                          </button>
+                          <div id="accordion-faq-2" class="accordion-content hide">
+                              <p class="leading-[30px] text-cp-light-grey pt-[14px]">We want to protect our and
+                                  clients
+                                  assets to the max level so that we chose the best one from Jakarta, Indonesia will
+                                  also
+                                  protect post building finished completed ahead one.</p>
+                          </div>
+                      </div>
+                      <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
+                          <button class="accordion-button flex justify-between gap-1 items-center"
+                              data-accordion="accordion-faq-3">
+                              <span class="font-bold text-lg leading-[27px] text-left">What insurance provider do
+                                  you
+                                  use?</span>
+                              <div class="arrow w-9 h-9 flex shrink-0">
+                                  <img src="{{ asset('assets/icons/arrow-circle-down.svg') }}"
+                                      class="transition-all duration-300" alt="icon">
+                              </div>
+                          </button>
+                          <div id="accordion-faq-3" class="accordion-content hide">
+                              <p class="leading-[30px] text-cp-light-grey pt-[14px]">We want to protect our and
+                                  clients
+                                  assets to the max level so that we chose the best one from Jakarta, Indonesia will
+                                  also
+                                  protect post building finished completed ahead one.</p>
+                          </div>
+                      </div>
+                      <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
+                          <button class="accordion-button flex justify-between gap-1 items-center"
+                              data-accordion="accordion-faq-4">
+                              <span class="font-bold text-lg leading-[27px] text-left">What if we have other
+                                  questions?</span>
+                              <div class="arrow w-9 h-9 flex shrink-0">
+                                  <img src="{{ asset('assets/icons/arrow-circle-down.svg') }}"
+                                      class="transition-all duration-300" alt="icon">
+                              </div>
+                          </button>
+                          <div id="accordion-faq-4" class="accordion-content hide">
+                              <p class="leading-[30px] text-cp-light-grey pt-[14px]">We want to protect our and
+                                  clients
+                                  assets to the max level so that we chose the best one from Jakarta, Indonesia will
+                                  also
+                                  protect post building finished completed ahead one.</p>
+                          </div>
                       </div>
                   </div>
               </div>
           </div>
-      @endsection
+      </div>
+      <footer class="bg-cp-dark-blue w-full relative overflow-hidden mt-20">
+          <div
+              class="container max-w-[1130px] mx-auto flex flex-col md:flex-row flex-wrap gap-10 md:gap-y-4 items-start justify-between pt-10 md:pt-[100px] pb-10 md:pb-[220px] relative z-10 px-5">
 
-      @push('after-scripts')
-          <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-              integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+              <!-- Logo & Sosmed -->
+              <div class="flex flex-col gap-6 md:gap-10 w-full md:w-auto">
+                  <div class="flex items-center gap-3">
+                      <div class="flex shrink-0 h-[43px] overflow-hidden">
+                          <img src="{{ asset('assets/logo/logo-navbar.png') }}" class="object-contain w-full h-full"
+                              alt="logo">
+                      </div>
+                  </div>
+                  <div class="flex items-center gap-4">
+                      <a href="">
+                          <div class="w-6 h-6 flex shrink-0 overflow-hidden">
+                              <img src="{{ asset('assets/icons/youtube.svg') }}" class="w-full h-full object-contain"
+                                  alt="youtube">
+                          </div>
+                      </a>
+                      <a href="">
+                          <div class="w-6 h-6 flex shrink-0 overflow-hidden">
+                              <img src="{{ asset('assets/icons/whatsapp.svg') }}" class="w-full h-full object-contain"
+                                  alt="whatsapp">
+                          </div>
+                      </a>
+                      <a href="">
+                          <div class="w-6 h-6 flex shrink-0 overflow-hidden">
+                              <img src="{{ asset('assets/icons/facebook.svg') }}" class="w-full h-full object-contain"
+                                  alt="facebook">
+                          </div>
+                      </a>
+                      <a href="">
+                          <div class="w-6 h-6 flex shrink-0 overflow-hidden">
+                              <img src="{{ asset('assets/icons/instagram.svg') }}" class="w-full h-full object-contain"
+                                  alt="instagram">
+                          </div>
+                      </a>
+                  </div>
+              </div>
 
-          <!-- JavaScript -->
-          <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-          <script src="https://unpkg.com/flickity-fade@1/flickity-fade.js"></script>
-          <script src="{{ asset('js/carousel.js') }}"></script>
-          <script src="{{ asset('js/accordion.js') }}"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-          <script src="{{ asset('js/modal-video.js') }}"></script>
-      @endpush
+              <!-- Links -->
+              <div class="flex flex-col md:flex-row flex-wrap gap-10 md:gap-[50px] w-full md:w-auto">
+
+                  <div class="flex flex-col w-full md:w-[200px] gap-3">
+                      <p class="font-bold text-lg text-white">Useful Links</p>
+                      <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Policies &
+                          Terms</a>
+                      <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Coverage
+                          Area</a>
+                  </div>
+
+                  <div class="flex flex-col w-full md:w-[200px] gap-3">
+                      <p class="font-bold text-lg text-white">Company</p>
+                      <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">About
+                          Us</a>
+                      <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Contact
+                          Us</a>
+                      <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Our
+                          Services</a>
+                      <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Team
+                          Us</a>
+                      <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Blog</a>
+                  </div>
+
+                  <!-- Form Kontak -->
+                  <div class="flex flex-col w-full md:w-[320px] p-6 bg-gray-800 rounded-2xl shadow-lg">
+                      <p class="font-bold text-2xl text-white mb-4">Formulir Kontak</p>
+
+                      <form action="" method="POST" class="flex flex-col gap-4">
+                          <!-- Nama -->
+                          <div class="flex flex-col">
+                              <label for="nama" class="text-sm font-medium text-white mb-1">Nama</label>
+                              <input id="nama" name="nama" type="text"
+                                  class="px-3 py-2 rounded-lg border border-gray-600 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                          </div>
+
+                          <!-- Email -->
+                          <div class="flex flex-col">
+                              <label for="email" class="text-sm font-medium text-white mb-1">Email</label>
+                              <input id="email" name="email" type="email"
+                                  class="px-3 py-2 rounded-lg border border-gray-600 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                          </div>
+
+                          <!-- Pesan -->
+                          <div class="flex flex-col">
+                              <label for="pesan" class="text-sm font-medium text-white mb-1">Pesan</label>
+                              <textarea id="pesan" name="pesan" rows="4"
+                                  class="px-3 py-2 rounded-lg border border-gray-600 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
+                          </div>
+
+                          <!-- Tombol Submit -->
+                          <button type="submit" id="submit"
+                              class="w-full py-2 mt-2 bg-white hover:bg-blue-700 text-blue font-semibold rounded-lg shadow-md transition duration-200 ease-in-out">
+                              Kirim
+                          </button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Background Text -->
+          <div class="absolute -bottom-[70px] md:-bottom-[135px] w-full">
+              <p
+                  class="font-extrabold text-[50px] md:text-[250px] leading-50px] md:leading-[375px] text-center text-white opacity-5">
+                  NEXICON
+              </p>
+          </div>
+      </footer>
+      <div id="video-modal" tabindex="-1" aria-hidden="true"
+          class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+          <div class="relative p-4 w-full lg:w-1/2 max-h-full">
+              <!-- Modal content -->
+              <div class="relative bg-white rounded-[20px] overflow-hidden shadow">
+                  <!-- Modal header -->
+                  <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+                      <h3 class="text-xl font-semibold text-cp-black">
+                          Company Profile Video
+                      </h3>
+                      <button type="button"
+                          class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                          onclick="{modal.hide()}">
+                          <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                              viewBox="0 0 14 14">
+                              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                          </svg>
+                          <span class="sr-only">Close modal</span>
+                      </button>
+                  </div>
+                  <!-- Modal body -->
+                  <div class="">
+                      <!-- video src added from the js script (modal-video.js) to prevent video running in the backgroud -->
+                      <iframe id="videoFrame" class="aspect-[16/9]" width="100%" src=""
+                          title="Demo Project Laravel Portfolio" frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+              </div>
+          </div>
+      </div>
+  @endsection
+
+  @push('after-scripts')
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+      <!-- JavaScript -->
+      <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+      <script src="https://unpkg.com/flickity-fade@1/flickity-fade.js"></script>
+      <script src="{{ asset('js/carousel.js') }}"></script>
+      <script src="{{ asset('js/accordion.js') }}"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+      <script src="{{ asset('js/modal-video.js') }}"></script>
+  @endpush
