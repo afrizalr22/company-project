@@ -634,29 +634,29 @@
                   </div>
 
                   <!-- Form Kontak -->
-                  <div class="flex flex-col w-full md:w-[320px] p-6 bg-gray-800 rounded-2xl shadow-lg">
-                      <p class="font-bold text-2xl text-white mb-4">Formulir Kontak</p>
+                  <div class="flex flex-col w-full md:w-[320px] ">
+                      <p class="font-bold text-2xl text-white mb-2">Formulir Kontak</p>
 
                       <form action="" method="POST" class="flex flex-col gap-4">
                           <!-- Nama -->
                           <div class="flex flex-col">
                               <label for="nama" class="text-sm font-medium text-white mb-1">Nama</label>
                               <input id="nama" name="nama" type="text"
-                                  class="px-3 py-2 rounded-lg border border-gray-600 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                                  class="px-3 py-2 rounded-lg border bg-white text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                           </div>
 
                           <!-- Email -->
                           <div class="flex flex-col">
                               <label for="email" class="text-sm font-medium text-white mb-1">Email</label>
                               <input id="email" name="email" type="email"
-                                  class="px-3 py-2 rounded-lg border border-gray-600 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                                  class="px-3 py-2 rounded-lg border bg-white text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                           </div>
 
                           <!-- Pesan -->
                           <div class="flex flex-col">
                               <label for="pesan" class="text-sm font-medium text-white mb-1">Pesan</label>
                               <textarea id="pesan" name="pesan" rows="4"
-                                  class="px-3 py-2 rounded-lg border border-gray-600 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
+                                  class="px-3 py-2 rounded-lg border bg-white text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
                           </div>
 
                           <!-- Tombol Submit -->
@@ -670,7 +670,7 @@
           </div>
 
           <!-- Background Text -->
-          <div class="absolute -bottom-[70px] md:-bottom-[135px] w-full">
+          <div class="absolute pb-5 md:-bottom-[135px] w-full">
               <p
                   class="font-extrabold text-[50px] md:text-[250px] leading-50px] md:leading-[375px] text-center text-white opacity-5">
                   NEXICON
