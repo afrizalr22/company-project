@@ -327,7 +327,7 @@
                         Press</a>
                 </div>
                 <div class="flex flex-col w-[200px] gap-3">
-                    <p class="font-bold text-lg text-white">Useful Links</p>
+                    <p class="font-bold text-lg text-white">Usefull Links</p>
                     <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Privacy &
                         Policy</a>
                     <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Terms &

@@ -12,7 +12,7 @@
                           </h1>
                           <p class="text-cp-light-grey leading-[30px] max-w-[437px]">{{ $hero_section->subheading }}</p>
                       </div>
-                      <div class="flex flex-wrap justify-center gap-4">
+                      {{-- <div class="flex flex-wrap justify-center gap-4">
                           <a href=""
                               class="bg-cp-dark-blue p-5 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Start
                               Now</a>
@@ -24,7 +24,7 @@
                               </div>
                               <span>Watch Video</span>
                           </button>
-                      </div>
+                      </div> --}}
                   </div>
           </div>
       @empty
@@ -613,7 +613,7 @@
               <div class="flex flex-col md:flex-row flex-wrap gap-10 md:gap-[50px] w-full md:w-auto">
 
                   <div class="flex flex-col w-full md:w-[200px] gap-3">
-                      <p class="font-bold text-lg text-white">Useful Links</p>
+                      <p class="font-bold text-lg text-white">Usefull Links</p>
                       <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Policies &
                           Terms</a>
                       <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Coverage

@@ -192,7 +192,7 @@
             <div class="flex flex-col md:flex-row flex-wrap gap-10 md:gap-[50px] w-full md:w-auto">
 
                 <div class="flex flex-col w-full md:w-[200px] gap-3">
-                    <p class="font-bold text-lg text-white">Useful Links</p>
+                    <p class="font-bold text-lg text-white">Usefull Links</p>
                     <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Policies &
                         Terms</a>
                     <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Coverage

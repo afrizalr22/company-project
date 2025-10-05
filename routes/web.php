@@ -2,16 +2,19 @@
 
 use App\Http\Controllers\AboutTimController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\BuildWebsiteController;
 use App\Http\Controllers\CompanyAboutController;
 use App\Http\Controllers\CompanyStatisticController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\HeroSectionController;
+use App\Http\Controllers\ItSolutionsController;
 use App\Http\Controllers\NeedsSolutionController;
 use App\Http\Controllers\OurPrincipleController;
 use App\Http\Controllers\OurTeamController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectClientController;
+use App\Http\Controllers\SupportMaintenanceController;
 use App\Http\Controllers\TechnologySolutionController;
 use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +24,9 @@ Route::get('/team', [FrontController::class, 'team'])->name('front.team');
 Route::get('/about', [FrontController::class, 'about'])->name('front.about');
 Route::get('/appointment', [FrontController::class, 'appointment'])->name('front.appointment');
 Route::post('/appointment/store', [FrontController::class, 'appointment_store'])->name('front.appointment_store');
+Route::get('/itsolutions', [FrontController::class, 'it_solutions'])->name('front.itsolutions');
+Route::get('/supportmaintenance', [FrontController::class, 'support_maintenance'])->name('front.maintenance');
+Route::get('buildwebsite', [FrontController::class, 'build_website'])->name('front.build_website');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -78,6 +84,18 @@ Route::middleware('auth')->group(function () {
 
         Route::middleware('can:manage technology solutions')->group(function () {
             Route::resource('technology_solutions', TechnologySolutionController::class);
+        });
+
+        Route::middleware('can:manage it solutions')->group(function () {
+            Route::resource('it_solutions', ItSolutionsController::class);
+        });
+
+        Route::middleware('can:manage support maintenance')->group(function () {
+            Route::resource('support_maintenance', SupportMaintenanceController::class);
+        });
+
+        Route::middleware('can:manate build website')->group(function () {
+            Route::resource('build_website', BuildWebsiteController::class);
         });
     });
 });
