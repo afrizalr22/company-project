@@ -3,38 +3,103 @@
     <div id="header" class="bg-[#F6F7FA] relative">
         <div class="container max-w-[1130px] mx-auto relative pt-10">
             <x-navbar />
-            <div class="flex flex-col gap-2 items-center py-20">
-                <div class="flex items-center ">
-                    <h2 class="font-bold text-4xl leading-[45px] text-center">Cakupan Area</h2>
+            <div class="flex flex-col gap-[50px] items-center py-20">
+                <div class="breadcrumb flex items-center justify-center gap-[30px]">
+                    <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Home</p>
+                    <span class="text-cp-light-grey">/</span>
+                    <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Product
+                    </p>
                 </div>
-                <div>
-                    <div class="w-50 h-1 bg-blue-600 mx-auto"></div>
-                </div>
+                <h2 class="font-bold text-4xl leading-[45px] text-center">Product</h2>
             </div>
         </div>
     </div>
-    <div id="header" class="relative overflow-hidden bg-white">
-        <div class="container max-w-[1130px] mx-auto relative pt-10 z-10">
-            <div id="Hero"
-                class="flex flex-col md:flex-row gap-10 md:gap-20 mt-10 md:mt-20 pb-10 md:pb-20 items-center w-full">
+    <div class="container mx-auto max-w-[1150px] px-6 py-14">
+        <!-- Judul Halaman -->
+        <div class="text-center mb-12">
+            <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Kami menyediakan berbagai solusi dan produk teknologi yang dirancang untuk mendukung kebutuhan bisnis modern
+                —
+                mulai dari infrastruktur, keamanan, hingga sistem digital terintegrasi.
+            </p>
+        </div>
 
-                <!-- Image -->
-                <div class="w-full md:basis-[43%] h-auto md:h-full flex-shrink-0">
-                    <img src="" class="object-cover w-full h-full rounded-xl" alt="poster">
+        <!-- Grid Produk -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Produk 1 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
+                <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=800&q=80"
+                    alt="Instalasi & Pengelolaan CCTV" class="w-full h-52 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Instalasi & Pengelolaan CCTV</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Sistem keamanan terpadu dengan CCTV berkualitas tinggi yang dapat diakses secara real-time melalui
+                        smartphone atau komputer.
+                    </p>
                 </div>
+            </div>
 
-                <!-- Content -->
-                <div class="flex flex-col gap-5 w-full md:flex-1 md:w-[50%] text-left px-4 md:px-0 mt-5 md:mt-0">
-                    <h1 class="font-extrabold text-2xl md:text-[50px] leading-snug md:leading-[65px] md:max-w-[536px]">
-                        Jangkauan Kami
-                    </h1>
-                    <p
-                        class="text-cp-light-grey text-sm md:text-base leading-relaxed md:leading-[30px] 
-                              md:max-w-[449px] text-justify">
-                        Berlokasi di BSD City tidak membuat kami membatasi diri untuk melayani anda di 1 kota saja. Kami
-                        hadir untuk melayani kebutuhan Anda di seluruh area Jabodetabek dengan komitmen dan profesionalisme
-                        tinggi. Namun, kami juga terbuka untuk proyek di luar wilayah tersebut, siap menjangkau lokasi lain
-                        untuk memberikan solusi terbaik sesuai kebutuhan Anda.
+            <!-- Produk 2 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
+                <img src="https://images.unsplash.com/photo-1581091870622-9c62b1e8e4b6?auto=format&fit=crop&w=800&q=80"
+                    alt="Access Control" class="w-full h-52 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Access Control</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Sistem kontrol akses modern menggunakan kartu, sidik jari, atau face recognition untuk keamanan
+                        ruangan dan gedung.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Produk 3 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80"
+                    alt="Absensi Digital" class="w-full h-52 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Absensi Digital</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Kelola kehadiran karyawan secara otomatis dan akurat, langsung terintegrasi dengan dashboard dan
+                        laporan kehadiran.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Produk 4 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80"
+                    alt="Pemantauan Server & Jaringan" class="w-full h-52 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Pemantauan Server & Jaringan</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Sistem pemantauan real-time untuk mendeteksi gangguan server dan jaringan agar bisnis tetap berjalan
+                        lancar.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Produk 5 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
+                <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=80"
+                    alt="Website Development" class="w-full h-52 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Pembuatan Website</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Kami membangun website profesional: landing page, company profile, portfolio, dan e-commerce sesuai
+                        kebutuhan bisnis Anda.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Produk 6 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
+                <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=800&q=80"
+                    alt="Support & Maintenance" class="w-full h-52 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Support & Maintenance</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Layanan dukungan dan perawatan rutin untuk menjaga performa perangkat IT Anda tetap optimal setiap
+                        saat.
                     </p>
                 </div>
             </div>

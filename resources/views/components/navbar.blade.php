@@ -32,6 +32,9 @@
                 </ul>
             </li>
 
+            <li class="font-semibold hover:text-blue-950 transition-all duration-300">
+                <a href="">Produk</a>
+            </li>
             <li
                 class="{{ request()->routeIs('front.team') ? 'text-blue-950' : '' }} font-semibold hover:text-blue-950 transition-all duration-300">
                 <a href="{{ route('front.team') }}">Gallery</a>

@@ -146,21 +146,30 @@
 
                 <div class="flex flex-col w-full md:w-[200px] gap-3">
                     <p class="font-bold text-lg text-white">Usefull Links</p>
-                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Policies &
+                    <a href="{{ route('policies.terms') }}"
+                        class="text-cp-light-grey hover:text-white transition-all duration-300">Policies &
                         Terms</a>
-                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Coverage
+                    <a href="{{ route('coverage.area') }}"
+                        class="text-cp-light-grey hover:text-white transition-all duration-300">Coverage
                         Area</a>
                 </div>
 
                 <div class="flex flex-col w-full md:w-[200px] gap-3">
                     <p class="font-bold text-lg text-white">Company</p>
-                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">About
+                    <a href="{{ route('about.us') }}"
+                        class="text-cp-light-grey hover:text-white transition-all duration-300">About
                         Us</a>
-                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Contact
+                    <a href="{{ route('our.history') }}"
+                        class="text-cp-light-grey hover:text-white transition-all duration-300">Our
+                        History</a>
+                    <a href="{{ route('front.about') }}"
+                        class="text-cp-light-grey hover:text-white transition-all duration-300">Contact
                         Us</a>
-                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Our
+                    <a href="{{ route('our.services') }}"
+                        class="text-cp-light-grey hover:text-white transition-all duration-300">Our
                         Services</a>
-                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Team
+                    <a href="{{ route('our.team') }}"
+                        class="text-cp-light-grey hover:text-white transition-all duration-300">Team
                         Us</a>
                     <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Blog</a>
                 </div>

@@ -5,7 +5,7 @@
             <x-navbar />
             <div class="flex flex-col gap-2 items-center py-20">
                 <div class="flex items-center ">
-                    <h2 class="font-bold text-4xl leading-[45px] text-center">Cakupan Area</h2>
+                    <h2 class="font-bold text-4xl leading-[45px] text-center">Tentang Kami</h2>
                 </div>
                 <div>
                     <div class="w-50 h-1 bg-blue-600 mx-auto"></div>
@@ -13,30 +13,56 @@
             </div>
         </div>
     </div>
-    <div id="header" class="relative overflow-hidden bg-white">
-        <div class="container max-w-[1130px] mx-auto relative pt-10 z-10">
-            <div id="Hero"
-                class="flex flex-col md:flex-row gap-10 md:gap-20 mt-10 md:mt-20 pb-10 md:pb-20 items-center w-full">
+    <div class="container bg-white mx-auto max-w-[1150px] px-6 pt-20">
+        <!-- Bagian Tentang Kami -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-14">
+            <!-- Gambar -->
+            <div class="flex justify-center lg:justify-start">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=700&q=80"
+                    alt="Tentang Kami - Nexicon" class="w-[500px] h-[380px] object-cover rounded-[10px] shadow-lg mt-2">
+            </div>
 
-                <!-- Image -->
-                <div class="w-full md:basis-[43%] h-auto md:h-full flex-shrink-0">
-                    <img src="" class="object-cover w-full h-full rounded-xl" alt="poster">
-                </div>
-
-                <!-- Content -->
-                <div class="flex flex-col gap-5 w-full md:flex-1 md:w-[50%] text-left px-4 md:px-0 mt-5 md:mt-0">
-                    <h1 class="font-extrabold text-2xl md:text-[50px] leading-snug md:leading-[65px] md:max-w-[536px]">
-                        Jangkauan Kami
-                    </h1>
-                    <p
-                        class="text-cp-light-grey text-sm md:text-base leading-relaxed md:leading-[30px] 
-                              md:max-w-[449px] text-justify">
-                        Berlokasi di BSD City tidak membuat kami membatasi diri untuk melayani anda di 1 kota saja. Kami
-                        hadir untuk melayani kebutuhan Anda di seluruh area Jabodetabek dengan komitmen dan profesionalisme
-                        tinggi. Namun, kami juga terbuka untuk proyek di luar wilayah tersebut, siap menjangkau lokasi lain
-                        untuk memberikan solusi terbaik sesuai kebutuhan Anda.
+            <!-- Teks -->
+            <div class="text-gray-700 flex flex-col justify-between">
+                <div>
+                    <p class="mb-4 leading-relaxed">
+                        Kami, <strong>PT. Next Generation Solutions (Nexicon)</strong> adalah perusahaan System
+                        Integrator yang hadir untuk membantu setiap bisnis bertransformasi menuju era digital. Kami
+                        berfokus menghadirkan solusi teknologi yang inovatif, terintegrasi, dan mampu memberikan dampak
+                        nyata bagi perusahaan dan masyarakat.
+                    </p>
+                    <p class="mb-4 leading-relaxed">
+                        Berdiri sejak tahun <strong>2024</strong>, Nexicon berkembang pesat dan dipercaya oleh berbagai
+                        instansi — mulai dari pemerintahan, perusahaan swasta, hingga UMKM. Tahun <strong>2025</strong>
+                        menjadi momentum penting dalam membangun fondasi digital yang lebih kuat bagi mitra kami.
+                    </p>
+                    <p class="mb-4 leading-relaxed">
+                        Nama <strong>Nexicon</strong> berasal dari kata <em>Next</em> (berikutnya) dan <em>Icon</em>
+                        (simbol), mencerminkan semangat kami untuk menjadi simbol inovasi dan kemajuan teknologi.
                     </p>
                 </div>
+            </div>
+        </div>
+
+        <!-- Bagian Visi & Misi -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-10 pb-16">
+            <!-- Kolom Visi -->
+            <div class="bg-gray-50 rounded-[10px] p-8 shadow-sm border border-gray-100">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-3 border-b border-gray-200 pb-2">Visi Kami</h3>
+                <p class="leading-relaxed text-gray-700">
+                    Menjadi ikon solusi teknologi masa depan yang memimpin perubahan digital untuk dunia yang lebih baik.
+                </p>
+            </div>
+
+            <!-- Kolom Misi -->
+            <div class="bg-gray-50 rounded-[10px] p-8 shadow-sm border border-gray-100">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-3 border-b border-gray-200 pb-2">Misi Kami</h3>
+                <ul class="list-decimal list-inside space-y-2 text-gray-700 leading-relaxed">
+                    <li>Menghadirkan solusi teknologi yang inovatif dan bernilai tinggi.</li>
+                    <li>Menjadi simbol kepercayaan dan profesionalisme di bidang teknologi.</li>
+                    <li>Mendorong kolaborasi lintas sektor untuk efisiensi digital.</li>
+                    <li>Membantu bisnis dan masyarakat beradaptasi di era digital.</li>
+                </ul>
             </div>
         </div>
     </div>

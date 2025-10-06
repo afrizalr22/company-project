@@ -26,7 +26,14 @@ Route::get('/appointment', [FrontController::class, 'appointment'])->name('front
 Route::post('/appointment/store', [FrontController::class, 'appointment_store'])->name('front.appointment_store');
 Route::get('/itsolutions', [FrontController::class, 'it_solutions'])->name('front.itsolutions');
 Route::get('/supportmaintenance', [FrontController::class, 'support_maintenance'])->name('front.maintenance');
-Route::get('buildwebsite', [FrontController::class, 'build_website'])->name('front.build_website');
+Route::get('/buildwebsite', [FrontController::class, 'build_website'])->name('front.build_website');
+Route::view('/coveragearea', 'footer.coveragearea')->name('coverage.area');
+Route::view('/history', 'footer.history')->name('our.history');
+Route::view('/policies&terms', 'footer.policies&terms')->name('policies.terms');
+Route::view('/services', 'footer.services')->name('our.services');
+Route::view('/teams', 'footer.team')->name('our.team');
+Route::view('/aboutus', 'footer.aboutus')->name('about.us');
+Route::view('/product', 'front.product')->name('front.product');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
