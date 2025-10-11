@@ -19,48 +19,32 @@
                 Tim profesional kami yang siap membantu Anda dalam setiap proyek teknologi dan inovasi digital.
             </p>
         </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 justify-center">
-            <!-- Card Anggota -->
-            <div
-                class="group bg-white rounded-2xl border border-transparent shadow-md hover:shadow-xl hover:border-blue-500 transition-all duration-300 p-6 flex flex-col items-center text-center">
+        <div
+            class="teams-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] justify-center">
+            @forelse ($footer_team as $team)
                 <div
-                    class="relative w-[140px] h-[140px] rounded-full overflow-hidden bg-gradient-to-tr from-blue-600 to-indigo-600 mb-5">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team member"
-                        class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110">
+                    class="card bg-white flex flex-col h-full justify-center items-center p-[30px] px-[29px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
+                    <div
+                        class="w-[100px] h-[100px] flex shrink-0 items-center justify-center rounded-full bg-[linear-gradient(150.55deg,_#007AFF_8.72%,_#312ECB_87.11%)]">
+                        <div class="w-[90px] h-[90px] rounded-full overflow-hidden">
+                            <img src="{{ Storage::url($team->avatar) }}" class="object-cover w-full h-full object-center"
+                                alt="photo">
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-1 text-center">
+                        <p class="font-bold text-xl leading-[30px]">{{ $team->name }}</p>
+                        <p class="text-cp-light-grey">{{ $team->occupation }}</p>
+                    </div>
+                    <div class="flex items-center justify-center gap-[10px]">
+                        <div class="w-6 h-6 flex shrink-0">
+                            <img src="{{ asset('assets/icons/global.svg') }}" alt="icon">
+                        </div>
+                        <p class="text-cp-dark-blue font-semibold">{{ $team->location }}</p>
+                    </div>
                 </div>
-                <h3 class="font-semibold text-lg text-gray-800">Ahmad Rizky</h3>
-            </div>
-
-            <div
-                class="group bg-white rounded-2xl border border-transparent shadow-md hover:shadow-xl hover:border-blue-500 transition-all duration-300 p-6 flex flex-col items-center text-center">
-                <div
-                    class="relative w-[140px] h-[140px] rounded-full overflow-hidden bg-gradient-to-tr from-blue-600 to-indigo-600 mb-5">
-                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Team member"
-                        class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110">
-                </div>
-                <h3 class="font-semibold text-lg text-gray-800">Siti Aisyah</h3>
-            </div>
-
-            <div
-                class="group bg-white rounded-2xl border border-transparent shadow-md hover:shadow-xl hover:border-blue-500 transition-all duration-300 p-6 flex flex-col items-center text-center">
-                <div
-                    class="relative w-[140px] h-[140px] rounded-full overflow-hidden bg-gradient-to-tr from-blue-600 to-indigo-600 mb-5">
-                    <img src="https://randomuser.me/api/portraits/men/60.jpg" alt="Team member"
-                        class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110">
-                </div>
-                <h3 class="font-semibold text-lg text-gray-800">Rafi Hidayat</h3>
-            </div>
-
-            <div
-                class="group bg-white rounded-2xl border border-transparent shadow-md hover:shadow-xl hover:border-blue-500 transition-all duration-300 p-6 flex flex-col items-center text-center">
-                <div
-                    class="relative w-[140px] h-[140px] rounded-full overflow-hidden bg-gradient-to-tr from-blue-600 to-indigo-600 mb-5">
-                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Team member"
-                        class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110">
-                </div>
-                <h3 class="font-semibold text-lg text-gray-800">Dewi Lestari</h3>
-            </div>
+            @empty
+                <p>Data tidak tersedia!</p>
+            @endforelse
         </div>
     </div>
     <footer class="bg-cp-dark-blue w-full relative overflow-hidden mt-20">

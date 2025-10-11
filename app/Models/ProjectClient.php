@@ -11,9 +11,6 @@ class ProjectClient extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'name',
-        'occupation',
-        'avatar',
         'logo',
     ];
 }

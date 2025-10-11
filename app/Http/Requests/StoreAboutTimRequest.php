@@ -26,6 +26,9 @@ class StoreAboutTimRequest extends FormRequest
             'subheading' => ['required', 'string', 'max:255'],
             'heading' => ['required', 'string', 'max:255'],
             'article' => ['required', 'string', 'max:10000'],
+            'achivment1' => ['required', 'string', 'max:225'],
+            'achivment2' => ['required', 'string', 'max:225'],
+            'achivment3' => ['required', 'string', 'max:225'],
         ];
     }
 }

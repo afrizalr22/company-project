@@ -15,5 +15,8 @@ class AboutTim extends Model
         'subheading',
         'heading',
         'article',
+        'achivment1',
+        'achivment2',
+        'achivment3',
     ];
 }

@@ -11,9 +11,8 @@ class OurPrinciple extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'subtitle',
-        'name',
-        'thumbnail',
         'icon',
+        'title',
+        'subtitle',
     ];
 }

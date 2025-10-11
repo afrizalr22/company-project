@@ -22,10 +22,9 @@ class UpdatePrincipleRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'max:255'],
+            'icon' => ['required', 'image', 'mimes:jpg,jpeg,png'],
+            'title' => ['required', 'string', 'max:255'],
             'subtitle' => ['required', 'string', 'max:255'],
-            'thumbnail' => ['sometimes', 'image', 'mimes:png,jpg,webp,jpeg'],
-            'icon' => ['sometimes', 'image', 'mimes:png,jpg,webp,jpeg'],
         ];
     }
 }

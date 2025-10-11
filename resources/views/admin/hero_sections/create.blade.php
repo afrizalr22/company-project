@@ -28,31 +28,10 @@
                     </div>
 
                     <div class="mt-4">
-                        <x-input-label for="banner" :value="__('banner')" />
-                        <x-text-input id="banner" class="block mt-1 w-full" type="file" name="banner" required
-                            autofocus autocomplete="banner" />
-                        <x-input-error :messages="$errors->get('banner')" class="mt-2" />
-                    </div>
-
-                    <div class="mt-4">
                         <x-input-label for="subheading" :value="__('subheading')" />
                         <x-text-input id="subheading" class="block mt-1 w-full" type="text" name="subheading"
                             :value="old('subheading')" required autofocus autocomplete="subheading" />
                         <x-input-error :messages="$errors->get('subheading')" class="mt-2" />
-                    </div>
-
-                    <div class="mt-4">
-                        <x-input-label for="achievement" :value="__('achievement')" />
-                        <x-text-input id="achievement" class="block mt-1 w-full" type="text" name="achievement"
-                            :value="old('achievement')" required autofocus autocomplete="achievement" />
-                        <x-input-error :messages="$errors->get('achievement')" class="mt-2" />
-                    </div>
-
-                    <div class="mt-4">
-                        <x-input-label for="path_video" :value="__('path_video')" />
-                        <x-text-input id="path_video" class="block mt-1 w-full" type="text" name="path_video"
-                            :value="old('path_video')" required autofocus autocomplete="path_video" />
-                        <x-input-error :messages="$errors->get('path_video')" class="mt-2" />
                     </div>
 
                     <div class="flex items-center justify-end mt-4">

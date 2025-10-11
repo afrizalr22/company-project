@@ -18,6 +18,9 @@ return new class extends Migration
             $table->string('subheading');
             $table->string('heading');
             $table->text('article');
+            $table->text('achivment1');
+            $table->text('achivment2');
+            $table->text('achivment3');
             $table->softDeletes();
         });
     }
