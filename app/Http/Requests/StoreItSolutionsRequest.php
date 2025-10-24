@@ -22,9 +22,9 @@ class StoreItSolutionsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'image' => 'required|image|mimes:png,jpg,jpeg',
-            'heading' => 'required|string|max:225',
-            'description' => 'required|string|max:10000',
+            'image' => ['required|image|mimes:png,jpg,jpeg,webp'],
+            'heading' => ['required|string|max:225'],
+            'description' => ['required|string|max:10000'],
         ];
     }
 }

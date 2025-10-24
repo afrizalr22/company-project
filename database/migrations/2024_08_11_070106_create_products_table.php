@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('about');
-            $table->string('thumbnail');
-            $table->string('tagline');
-            $table->text('name')->uniqid();
+            $table->string('image');
+            $table->string('name_product');
+            $table->string('description');
             $table->softDeletes();
             $table->timestamps();
         });

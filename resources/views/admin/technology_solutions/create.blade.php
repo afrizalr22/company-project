@@ -33,8 +33,7 @@
                     </div>
                     <div class="mt-4">
                         <x-input-label for="article" :value="__('Article')" />
-                        <x-text-input id="article" class="blok mt-1 w-full" type="text" name="article"
-                            :value="old('article')" required outofocus auto complite="article" />
+                        <textarea name="article" id="article" cols="30" rows="5" class="border border-slate-300 rounded-xl w-full"></textarea>
                         <x-input-error :messages="$errors->get('article')" class="mt-2" />
                     </div>
                     <div class="flex items-center justify-end mt-4">

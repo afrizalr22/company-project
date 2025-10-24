@@ -38,14 +38,14 @@
                                 <x-dropdown-link :href="route('admin.hero_sections.index')">
                                     {{ __('Hero Section') }}
                                 </x-dropdown-link>
+                                <x-dropdown-link :href="route('admin.about_tims.index')">
+                                    {{ __('About Tim') }}
+                                </x-dropdown-link>
                                 <x-dropdown-link :href="route('admin.principles.index')">
                                     {{ __('Our Principles') }}
                                 </x-dropdown-link>
                                 <x-dropdown-link :href="route('admin.statistics.index')">
                                     {{ __('Company Stats') }}
-                                </x-dropdown-link>
-                                <x-dropdown-link :href="route('admin.about_tims.index')">
-                                    {{ __('About Tim') }}
                                 </x-dropdown-link>
                                 <x-dropdown-link :href="route('admin.needs_solutions.index')">
                                     {{ __('Needs Solutions') }}
@@ -64,6 +64,16 @@
                     <div class="hidden sm:flex sm:items-center sm:ms-6">
                         <x-nav-link :href="route('admin.products.index')" :active="request()->routeIs('admin.products.index')">
                             {{ __('Our Products') }}
+                        </x-nav-link>
+                    </div>
+                    <div class="hidden sm:flex sm:items-center sm:ms-6">
+                        <x-nav-link :href="route('admin.gallery.index')" :active="request()->routeIs('admin.gallery.index')">
+                            {{ __('Gallery') }}
+                        </x-nav-link>
+                    </div>
+                    <div class="hidden sm:flex sm:items-center sm:ms-6">
+                        <x-nav-link :href="route('admin.blog.index')" :active="request()->routeIs('admin.blog.index')">
+                            {{ __('Blog') }}
                         </x-nav-link>
                     </div>
                     <div class="hidden sm:flex sm:items-center sm:ms-6">

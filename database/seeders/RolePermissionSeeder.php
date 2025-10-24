@@ -26,7 +26,9 @@ class RolePermissionSeeder extends Seeder
             'manage hero sections',
             'manage about tim',
             'manage needs solutions',
-            'manage techology solutions'
+            'manage techology solutions',
+            'manage gallery',
+            'manage blog',
         ];
 
         foreach ($permissions as $permission) {
@@ -54,8 +56,8 @@ class RolePermissionSeeder extends Seeder
         ]);
 
         $user = User::create([
-            'name' => 'CompanyAf',
-            'email' => 'companyaf@gmail.com',
+            'name' => 'nexicon',
+            'email' => 'nexicon@gmail.com',
             'password' => bcrypt('123123123')
         ]);
 

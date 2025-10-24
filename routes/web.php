@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\AboutTimController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BuildWebsiteController;
 use App\Http\Controllers\CompanyAboutController;
 use App\Http\Controllers\CompanyStatisticController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HeroSectionController;
 use App\Http\Controllers\ItSolutionsController;
 use App\Http\Controllers\NeedsSolutionController;
@@ -17,23 +19,27 @@ use App\Http\Controllers\ProjectClientController;
 use App\Http\Controllers\SupportMaintenanceController;
 use App\Http\Controllers\TechnologySolutionController;
 use App\Http\Controllers\TestimonialController;
+use App\Models\Gallery;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontController::class, 'index'])->name('front.index');
-Route::get('/team', [FrontController::class, 'team'])->name('front.team');
 Route::get('/about', [FrontController::class, 'about'])->name('front.about');
 Route::get('/appointment', [FrontController::class, 'appointment'])->name('front.appointment');
 Route::post('/appointment/store', [FrontController::class, 'appointment_store'])->name('front.appointment_store');
 Route::get('/itsolutions', [FrontController::class, 'it_solutions'])->name('front.itsolutions');
 Route::get('/supportmaintenance', [FrontController::class, 'support_maintenance'])->name('front.maintenance');
 Route::get('/buildwebsite', [FrontController::class, 'build_website'])->name('front.build_website');
+Route::get('/product', [FrontController::class, 'product'])->name('front.product');
+Route::get('/gallery', [FrontController::class, 'gallery'])->name('front.gallery');
+Route::get('blog', [FrontController::class, 'blog'])->name('front.blog');
+Route::view('/contact', 'front.contact')->name('front.contact');
 Route::view('/coveragearea', 'footer.coveragearea')->name('coverage.area');
 Route::view('/history', 'footer.history')->name('our.history');
 Route::view('/policies&terms', 'footer.policies&terms')->name('policies.terms');
 Route::view('/services', 'footer.services')->name('our.services');
 Route::get('/teams', [FrontController::class, 'footer_team'])->name('our.team');
 Route::view('/aboutus', 'footer.aboutus')->name('about.us');
-Route::view('/product', 'front.product')->name('front.product');
+Route::view('/blog', 'front.blog')->name('front.blog');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -101,8 +107,16 @@ Route::middleware('auth')->group(function () {
             Route::resource('support_maintenance', SupportMaintenanceController::class);
         });
 
-        Route::middleware('can:manate build website')->group(function () {
+        Route::middleware('can:manage build website')->group(function () {
             Route::resource('build_website', BuildWebsiteController::class);
+        });
+
+        Route::middleware('can:manage gallery')->group(function () {
+            Route::resource('gallery', GalleryController::class);
+        });
+
+        Route::middleware('can:manage blog')->group(function () {
+            Route::resource('blog', BlogController::class);
         });
     });
 });

@@ -32,12 +32,12 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        DB::transaction( function () use ($request){
+        DB::transaction(function () use ($request) {
             $validated = $request->validated();
 
-            if($request->hasFile('thumbnail')){
-                $thumbnailPath = $request->file('thumbnail')->store('thumbnail', 'public');
-                $validated['thumbnail'] = $thumbnailPath;
+            if ($request->hasFile('image')) {
+                $thumbnailPath = $request->file('image')->store('image', 'public');
+                $validated['image'] = $thumbnailPath;
             }
 
             $newProduct = Product::create($validated);
@@ -67,11 +67,11 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product)
     {
-        DB::transaction(function() use($request, $product){
+        DB::transaction(function () use ($request, $product) {
             $validated = $request->validated();
-            if($request->hasFile('thumbnail')){
-                $thumbnailPath = $request->file('thumbnail')->store('thumbnail', 'public');
-                $validated['thumbnail'] = $thumbnailPath;
+            if ($request->hasFile('image')) {
+                $thumbnailPath = $request->file('image')->store('image', 'public');
+                $validated['image'] = $thumbnailPath;
             }
             $product->update($validated);
         });
@@ -83,7 +83,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        DB::transaction(function () use($product){
+        DB::transaction(function () use ($product) {
             $product->delete();
         });
         return redirect()->route('admin.products.index');

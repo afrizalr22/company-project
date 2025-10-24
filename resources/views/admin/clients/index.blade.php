@@ -21,6 +21,10 @@
                             <img src="{{ Storage::url($client->logo) }}" alt=""
                                 class="rounded-2xl object-cover w-[90px] h-[90px]">
                         </div>
+                        <div class="hidden md:flex flex-col">
+                            <p class="text-slate-500 text-sm">Date</p>
+                            <h3 class="text-indigo-950 text-xl font-bold">{{ $client->created_at }}</h3>
+                        </div>
                         <div class="hidden md:flex flex-row items-center gap-x-3">
                             <a href="{{ route('admin.clients.edit', $client) }}"
                                 class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">

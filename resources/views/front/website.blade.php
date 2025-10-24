@@ -1,24 +1,21 @@
 @extends('front.layouts.app')
 @section('content')
-    <div id="header" class="bg-[#F6F7FA] relative">
+    <div id="header" class="bg-blue-gradient relative">
         <div class="container max-w-[1130px] mx-auto relative pt-10">
             <x-navbar />
-            <div class="flex flex-col gap-[50px] items-center py-20">
-                <div class="flex items-center gap-[30px]">
-                    <h2 class="font-bold text-4xl leading-[45px] text-center underline underline-offset-4">Web
-                        Development
-                    </h2>
-                </div>
-                <div class="">
-                    <p class="text-cp-black font-semibold text-center">Website yang bagus bisa jadi kunci pertama orang
-                        kenal bisnis kamu. Kami siap bantu wujudkan website yang menarik, fungsional, dan pastinya
-                        sesuai kebutuhan. Mau mulai dari nol atau upgrade tampilan yang lama? Bisa banget, tinggal
-                        cerita aja idenya
+            <div class="flex flex-col gap-[50px] items-center pt-15">
+                <h2 class="font-bold text-4xl leading-[45px] text-center">Web
+                    Development
+                </h2>
+                <div class="text-center mb-12">
+                    <p class="text-white max-w-2xl mx-auto leading-relaxed">Kami menyediakan layanan pembuatan website
+                        profesional yang dirancang untuk mendukung identitas dan kebutuhan bisnis Anda. Dengan desain
+                        modern, fitur fungsional, serta performa optimal, kami membantu Anda membangun kehadiran digital
+                        yang kuat dan terpercaya.
                     </p>
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <div class="bg-white py-16">
         <div class="max-w-6xl mx-auto px-6">
@@ -34,7 +31,8 @@
                     </p>
                 </div>
                 <div class="md:w-1/2 mt-6 md:mt-0 md:pl-10">
-                    <img src="/images/cctv.jpg" alt="Landing Page" class="rounded-xl shadow-lg w-full object-cover">
+                    <img src="/assets/buildwebsite/LandingPage.webp" alt="Landing Page"
+                        class="rounded-xl shadow-lg w-full object-cover">
                 </div>
             </div>
 
@@ -50,7 +48,7 @@
                     </p>
                 </div>
                 <div class="md:w-1/2 mt-6 md:mt-0 md:pr-10">
-                    <img src="/images/access-control.jpg" alt="Company Profile"
+                    <img src="/assets/buildwebsite/CompanyProfile.webp" alt="Company Profile"
                         class="rounded-xl shadow-lg w-full object-cover">
                 </div>
             </div>
@@ -67,7 +65,8 @@
                     </p>
                 </div>
                 <div class="md:w-1/2 mt-6 md:mt-0 md:pl-10">
-                    <img src="/images/absensi.jpg" alt="Portofolio" class="rounded-xl shadow-lg w-full object-cover">
+                    <img src="/assets/buildwebsite/Portfolio.webp" alt="Portofolio"
+                        class="rounded-xl shadow-lg w-full object-cover">
                 </div>
             </div>
 
@@ -83,7 +82,23 @@
                     </p>
                 </div>
                 <div class="md:w-1/2 mt-6 md:mt-0 md:pr-10">
-                    <img src="/images/monitoring.jpg" alt="E-commerce" class="rounded-xl shadow-lg w-full object-cover">
+                    <img src="/assets/buildwebsite/E-commerce.webp" alt="E-commerce"
+                        class="rounded-xl shadow-lg w-full object-cover">
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center mb-16">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">Redesign & Perbaikan Website</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Website yang optimal adalah wajah digital bisnis kamu. Kami tawarkan layanan optimasi dan redesign
+                        untuk website yang sudah ada—baik dari sisi tampilan, navigasi, kecepatan, maupun fungsionalitas.
+                        Solusi tepat untuk kamu yang ingin tampil lebih profesional di dunia digital.
+                    </p>
+                </div>
+                <div class="md:w-1/2 mt-6 md:mt-0 md:pl-10">
+                    <img src="/assets/buildwebsite/redesign.webp" alt="Portofolio"
+                        class="rounded-xl shadow-lg w-full object-cover">
                 </div>
             </div>
 
@@ -101,9 +116,9 @@
             </div>
         </div>
     </div>
-    <footer class="bg-cp-dark-blue w-full relative overflow-hidden mt-20">
+    <footer class="bg-blue-gradient w-full relative overflow-hidden">
         <div
-            class="container max-w-[1130px] mx-auto flex flex-col md:flex-row flex-wrap gap-10 md:gap-y-4 items-start justify-between pt-10 md:pt-[100px] pb-10 md:pb-[220px] relative z-10 px-5">
+            class="container max-w-[1130px] mx-auto flex flex-col md:flex-row flex-wrap gap-10 md:gap-y-4 items-start justify-between pt-10 md:pt-[100px] pb-10 md:pb-[110px] relative z-10 px-5">
 
             <!-- Logo & Sosmed -->
             <div class="flex flex-col gap-6 md:gap-10 w-full md:w-auto">
@@ -147,31 +162,32 @@
                 <div class="flex flex-col w-full md:w-[200px] gap-3">
                     <p class="font-bold text-lg text-white">Usefull Links</p>
                     <a href="{{ route('policies.terms') }}"
-                        class="text-cp-light-grey hover:text-white transition-all duration-300">Policies &
+                        class="text-white hover:text-gray-700 transition-all duration-300">Policies &
                         Terms</a>
                     <a href="{{ route('coverage.area') }}"
-                        class="text-cp-light-grey hover:text-white transition-all duration-300">Coverage
+                        class="text-white hover:text-gray-700 transition-all duration-300">Coverage
                         Area</a>
                 </div>
 
                 <div class="flex flex-col w-full md:w-[200px] gap-3">
                     <p class="font-bold text-lg text-white">Company</p>
                     <a href="{{ route('about.us') }}"
-                        class="text-cp-light-grey hover:text-white transition-all duration-300">About
+                        class="text-white hover:text-gray-700 transition-all duration-300">About
                         Us</a>
                     <a href="{{ route('our.history') }}"
-                        class="text-cp-light-grey hover:text-white transition-all duration-300">Our
+                        class="text-white hover:text-gray-700 transition-all duration-300">Our
                         History</a>
-                    <a href="{{ route('front.about') }}"
-                        class="text-cp-light-grey hover:text-white transition-all duration-300">Contact
+                    <a href="{{ route('front.contact') }}"
+                        class="text-white hover:text-gray-700 transition-all duration-300">Contact
                         Us</a>
                     <a href="{{ route('our.services') }}"
-                        class="text-cp-light-grey hover:text-white transition-all duration-300">Our
+                        class="text-white hover:text-gray-700 transition-all duration-300">Our
                         Services</a>
                     <a href="{{ route('our.team') }}"
-                        class="text-cp-light-grey hover:text-white transition-all duration-300">Team
+                        class="text-white hover:text-gray-700 transition-all duration-300">Team
                         Us</a>
-                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Blog</a>
+                    <a href="{{ route('front.blog') }}"
+                        class="text-white hover:text-gray-700 transition-all duration-300">Blog</a>
                 </div>
 
                 <!-- Form Kontak -->
@@ -202,19 +218,12 @@
 
                         <!-- Tombol Submit -->
                         <button type="submit" id="submit"
-                            class="w-full py-2 mt-2 bg-white hover:bg-blue-700 text-blue font-semibold rounded-lg shadow-md transition duration-200 ease-in-out">
+                            class="w-full py-2 mt-2 bg-white hover:bg-blue-700 text-blue hover:text-white font-semibold rounded-lg shadow-md transition duration-200 ease-in-out">
                             Kirim
                         </button>
                     </form>
                 </div>
             </div>
-        </div>
-        <!-- Background Text -->
-        <div class="absolute pb-5 md:-bottom-[135px] w-full">
-            <p
-                class="font-extrabold text-[50px] md:text-[250px] leading-50px] md:leading-[375px] text-center text-white opacity-5">
-                NEXICON
-            </p>
         </div>
     </footer>
 @endsection

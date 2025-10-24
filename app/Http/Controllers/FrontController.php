@@ -5,20 +5,21 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreAppointmentRequest;
 use App\Models\AboutTim;
 use App\Models\Appointment;
+use App\Models\Blog;
 use App\Models\BuildWebsite;
 use App\Models\CompanyAbout;
-use App\Models\CompanyKeypoint;
 use App\Models\CompanyStatistic;
+use App\Models\Gallery;
 use App\Models\HeroSection;
 use App\Models\ItSolutions;
 use App\Models\NeedsSolution;
 use App\Models\OurPrinciple;
 use App\Models\OurTeam;
 use App\Models\Product;
+use App\Models\ProjectClient;
 use App\Models\SupportMaintenance;
 use App\Models\TechnologySolution;
 use App\Models\Testimonial;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class FrontController extends Controller
@@ -33,19 +34,22 @@ class FrontController extends Controller
         $hero_sections = HeroSection::take(1)->get();
         $about_tims = AboutTim::take(1)->get();
         $needs_solutions = NeedsSolution::take(1)->get();
+        $clients = ProjectClient::all();
+        $gallerys = Gallery::take(3)->get();
+        $blog = Blog::take(3)->get();
         $technology_solutions = TechnologySolution::take(1)->get();
         $it_solutions = ItSolutions::take(1)->get();
         $support_maintenance = SupportMaintenance::take(2)->get();
         $build_website = BuildWebsite::take(2)->get();
-        return view('front.index', compact('statistics', 'principles', 'products', 'teams', 'testimonials', 'hero_sections', 'about_tims', 'needs_solutions', 'technology_solutions', 'it_solutions', 'support_maintenance', 'build_website'));
+        return view('front.index', compact('statistics', 'principles', 'products', 'teams', 'testimonials', 'hero_sections', 'about_tims', 'needs_solutions', 'technology_solutions', 'clients', 'gallerys', 'blog', 'it_solutions', 'support_maintenance', 'build_website'));
     }
 
-    public function team()
-    {
-        $teams = OurTeam::take(3)->get();
-        $statistics = CompanyStatistic::take(4)->get();
-        return view('front.team', compact('teams', 'statistics'));
-    }
+    // public function team()
+    // {
+    //     $teams = OurTeam::take(3)->get();
+    //     $statistics = CompanyStatistic::take(4)->get();
+    //     return view('front.team', compact('teams', 'statistics'));
+    // }
 
     public function about()
     {
@@ -92,5 +96,17 @@ class FrontController extends Controller
     {
         $footer_team = OurTeam::all();
         return view('footer.team', compact('footer_team'));
+    }
+
+    public function gallery()
+    {
+        $gallerys = Gallery::all();
+        return view('front.gallery', compact('gallerys'));
+    }
+
+    public function product()
+    {
+        $products = Product::all();
+        return view('front.product', compact('products'));
     }
 }

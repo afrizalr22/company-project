@@ -27,33 +27,40 @@
             <h3 class="text-2xl font-semibold text-blue-700 mb-5 border-l-4 border-blue-600 pl-3">1. IT Solution</h3>
             <div class="grid sm:grid-cols-2 gap-6">
                 <div class="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-1">Instalasi & Pengelolaan CCTV</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Pemasangan dan pengelolaan sistem CCTV dari titik strategis, kabel, hingga integrasi aplikasi
-                        pemantauan.
-                    </p>
+                    <a href="{{ route('front.itsolutions') }}">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-1">Instalasi & Pengelolaan CCTV</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Pemasangan dan pengelolaan sistem CCTV dari titik strategis, kabel, hingga integrasi aplikasi
+                            pemantauan.
+                        </p>
+                    </a>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition">
+                    <a href="{{ route('front.itsolutions') }}">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-1">Access Control</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Atur akses ruangan dengan sistem kartu, sidik jari, atau face recognition untuk keamanan lebih
+                            baik.
+                        </p>
+                    </a>
                 </div>
 
                 <div class="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-1">Access Control</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Atur akses ruangan dengan sistem kartu, sidik jari, atau face recognition untuk keamanan lebih
-                        baik.
-                    </p>
+                    <a href="{{ route('front.itsolutions') }}">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-1">Absensi Digital</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Sistem absensi online real-time yang cepat dan akurat, cocok untuk manajemen karyawan modern.
+                        </p>
+                    </a>
                 </div>
 
                 <div class="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-1">Absensi Digital</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Sistem absensi online real-time yang cepat dan akurat, cocok untuk manajemen karyawan modern.
-                    </p>
-                </div>
-
-                <div class="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-1">Pemantauan Server & Jaringan</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Pantau server dan jaringan secara real-time dengan notifikasi otomatis jika ada gangguan.
-                    </p>
+                    <a href="{{ route('front.itsolutions') }}">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-1">Pemantauan Server & Jaringan</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Pantau server dan jaringan secara real-time dengan notifikasi otomatis jika ada gangguan.
+                        </p>
+                    </a>
                 </div>
             </div>
         </div>
@@ -64,24 +71,30 @@
                 Maintenance</h3>
             <div class="grid sm:grid-cols-3 gap-6">
                 <div class="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-1">Instalasi & Manajemen Kabel</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Pemasangan jaringan LAN dan kabel yang rapi serta efisien untuk mendukung sistem kerja Anda.
-                    </p>
+                    <a href="{{ route('front.maintenance') }}">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-1">Instalasi & Manajemen Kabel</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Pemasangan jaringan LAN dan kabel yang rapi serta efisien untuk mendukung sistem kerja Anda.
+                        </p>
+                    </a>
                 </div>
 
                 <div class="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-1">Konfigurasi Mikrotik & Router</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Konfigurasi perangkat jaringan agar koneksi tetap stabil, cepat, dan aman.
-                    </p>
+                    <a href="{{ route('front.maintenance') }}">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-1">Konfigurasi Mikrotik & Router</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Konfigurasi perangkat jaringan agar koneksi tetap stabil, cepat, dan aman.
+                        </p>
+                    </a>
                 </div>
 
                 <div class="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-1">Perawatan Perangkat IT</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Layanan maintenance rutin untuk menjaga performa sistem dan mencegah gangguan teknis.
-                    </p>
+                    <a href="{{ route('front.maintenance') }}">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-1">Perawatan Perangkat IT</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Layanan maintenance rutin untuk menjaga performa sistem dan mencegah gangguan teknis.
+                        </p>
+                    </a>
                 </div>
             </div>
         </div>
@@ -92,38 +105,48 @@
             </h3>
             <div class="grid sm:grid-cols-3 gap-6">
                 <div class="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-1">Landing Page</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Website promosi cepat dan efisien untuk menarik pelanggan dengan desain profesional.
-                    </p>
+                    <a href="{{ route('front.build_website') }}">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-1">Landing Page</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Website promosi cepat dan efisien untuk menarik pelanggan dengan desain profesional.
+                        </p>
+                    </a>
                 </div>
 
                 <div class="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-1">Company Profile</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Tampilkan profil bisnis Anda dengan tampilan elegan yang mencerminkan profesionalitas.
-                    </p>
+                    <a href="{{ route('front.build_website') }}">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-1">Company Profile</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Tampilkan profil bisnis Anda dengan tampilan elegan yang mencerminkan profesionalitas.
+                        </p>
+                    </a>
                 </div>
 
                 <div class="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-1">Portfolio</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Sajikan karya atau proyek Anda dalam tampilan visual yang menarik dan responsif.
-                    </p>
+                    <a href="{{ route('front.build_website') }}">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-1">Portfolio</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Sajikan karya atau proyek Anda dalam tampilan visual yang menarik dan responsif.
+                        </p>
+                    </a>
                 </div>
 
                 <div class="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-1">E-commerce</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Toko online dengan sistem transaksi aman dan tampilan yang user-friendly.
-                    </p>
+                    <a href="{{ route('front.build_website') }}">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-1">E-commerce</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Toko online dengan sistem transaksi aman dan tampilan yang user-friendly.
+                        </p>
+                    </a>
                 </div>
 
                 <div class="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-1">Redesign & Perbaikan Website</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Kami bantu perbarui tampilan dan performa website agar lebih modern dan cepat.
-                    </p>
+                    <a href="{{ route('front.build_website') }}">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-1">Redesign & Perbaikan Website</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Kami bantu perbarui tampilan dan performa website agar lebih modern dan cepat.
+                        </p>
+                    </a>
                 </div>
             </div>
         </div>
@@ -139,9 +162,9 @@
             </a>
         </div>
     </div>
-    <footer class="bg-cp-dark-blue w-full relative overflow-hidden mt-20">
+    <footer class="bg-blue-gradient w-full relative overflow-hidden">
         <div
-            class="container max-w-[1130px] mx-auto flex flex-col md:flex-row flex-wrap gap-10 md:gap-y-4 items-start justify-between pt-10 md:pt-[100px] pb-10 md:pb-[220px] relative z-10 px-5">
+            class="container max-w-[1130px] mx-auto flex flex-col md:flex-row flex-wrap gap-10 md:gap-y-4 items-start justify-between pt-10 md:pt-[100px] pb-10 md:pb-[110px] relative z-10 px-5">
 
             <!-- Logo & Sosmed -->
             <div class="flex flex-col gap-6 md:gap-10 w-full md:w-auto">
@@ -185,31 +208,32 @@
                 <div class="flex flex-col w-full md:w-[200px] gap-3">
                     <p class="font-bold text-lg text-white">Usefull Links</p>
                     <a href="{{ route('policies.terms') }}"
-                        class="text-cp-light-grey hover:text-white transition-all duration-300">Policies &
+                        class="text-white hover:text-gray-700 transition-all duration-300">Policies &
                         Terms</a>
                     <a href="{{ route('coverage.area') }}"
-                        class="text-cp-light-grey hover:text-white transition-all duration-300">Coverage
+                        class="text-white hover:text-gray-700 transition-all duration-300">Coverage
                         Area</a>
                 </div>
 
                 <div class="flex flex-col w-full md:w-[200px] gap-3">
                     <p class="font-bold text-lg text-white">Company</p>
                     <a href="{{ route('about.us') }}"
-                        class="text-cp-light-grey hover:text-white transition-all duration-300">About
+                        class="text-white hover:text-gray-700 transition-all duration-300">About
                         Us</a>
                     <a href="{{ route('our.history') }}"
-                        class="text-cp-light-grey hover:text-white transition-all duration-300">Our
+                        class="text-white hover:text-gray-700 transition-all duration-300">Our
                         History</a>
-                    <a href="{{ route('front.about') }}"
-                        class="text-cp-light-grey hover:text-white transition-all duration-300">Contact
+                    <a href="{{ route('front.contact') }}"
+                        class="text-white hover:text-gray-700 transition-all duration-300">Contact
                         Us</a>
                     <a href="{{ route('our.services') }}"
-                        class="text-cp-light-grey hover:text-white transition-all duration-300">Our
+                        class="text-white hover:text-gray-700 transition-all duration-300">Our
                         Services</a>
                     <a href="{{ route('our.team') }}"
-                        class="text-cp-light-grey hover:text-white transition-all duration-300">Team
+                        class="text-white hover:text-gray-700 transition-all duration-300">Team
                         Us</a>
-                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Blog</a>
+                    <a href="{{ route('front.blog') }}"
+                        class="text-white hover:text-gray-700 transition-all duration-300">Blog</a>
                 </div>
 
                 <!-- Form Kontak -->
@@ -240,19 +264,12 @@
 
                         <!-- Tombol Submit -->
                         <button type="submit" id="submit"
-                            class="w-full py-2 mt-2 bg-white hover:bg-blue-700 text-blue font-semibold rounded-lg shadow-md transition duration-200 ease-in-out">
+                            class="w-full py-2 mt-2 bg-white hover:bg-blue-700 text-blue hover:text-white font-semibold rounded-lg shadow-md transition duration-200 ease-in-out">
                             Kirim
                         </button>
                     </form>
                 </div>
             </div>
-        </div>
-        <!-- Background Text -->
-        <div class="absolute pb-5 md:-bottom-[135px] w-full">
-            <p
-                class="font-extrabold text-[50px] md:text-[250px] leading-50px] md:leading-[375px] text-center text-white opacity-5">
-                NEXICON
-            </p>
         </div>
     </footer>
 @endsection

@@ -22,9 +22,9 @@ class UpdateItSolutionsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'image' => 'required|image|mimes:png,jpg,jpeg',
-            'heading' => 'required|string|max:225',
-            'description' => 'required|string|max:10000',
+            'image' => ['sometimes', 'image', 'mimes:png,jpg,jpeg'],
+            'heading' => ['required', 'string', 'max:225'],
+            'description' => ['required', 'string', 'max:10000'],
         ];
     }
 }
